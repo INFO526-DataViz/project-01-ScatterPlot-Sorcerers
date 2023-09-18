@@ -1,5 +1,5 @@
 ---
-title: "Proposal title"
+title: "Hot Ones Episodes"
 subtitle: "Proposal"
 format: html
 editor: visual
@@ -21,6 +21,8 @@ library(tidyverse)
 A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
 
 Make sure to load the data and use inline code for some of this information.
+
+The reason we chose this specific dataset is because a couple of us in the group have seen the show and thought it would be fun. It also seems like it would be engaging to present for the rest of the class.
 
 ## Questions
 
