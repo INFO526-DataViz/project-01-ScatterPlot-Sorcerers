@@ -26,10 +26,14 @@ The reason we chose this specific dataset is because a couple of us in the group
 
 ## Questions
 
-The two questions you want to answer.
+Q1 ) Is there any correlation between the scoville score of the sauce and the number of guests who did not finish trying all the sauces?
+1.1) Find the season which has the most unfinished contestants
+1.2) Compare that with the sauce score.
+
+
 
 ## Analysis plan
 
-- For the first question, we plan on creating the variable "unfinished_count" which represents the number of celebrities that failed to try all the sauces for each season. Then we create another variable "average_scoville" which is the average of the variable "scoville" for each season. Then we can make a scatter plot in the first layer with "average_scovile" on the x-axis and "unfished_count" on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend.
+- For the first question, we plan on creating the variable "unfinished_count" which represents the number of guests that failed to try all the sauces for each season. Then we create another variable "average_scoville" which is the average of the variable "scoville" for each season. Then we can make a scatter plot in the first layer with "average_scovile" on the x-axis and "unfished_count" on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend.
 Here we calculate the "unfinished_count" variable from "episodes.csv" and the "average_scovile" variable from "sauces.csv". 
 
