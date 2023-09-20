@@ -1,7 +1,7 @@
 ---
-title: "Project title"
+title: "From Mild to Wild"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
-author: "Author names"
+author: "ScatterPlot-Sorcerers"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
@@ -160,6 +160,6 @@ Limitations:
 
 ## Feeling adventurous?
 
--   You are welcomed to use the default styling of the slides. In fact, that\'s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
+-   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
 
 -   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
