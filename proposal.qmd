@@ -8,7 +8,10 @@ editor: visual
 ```{r}
 #| label: load-pkgs
 #| message: false
-library(tidyverse)
+if (!require("pacman"))
+  install.packages("pacman")
+pacman::p_load(tidyverse, tidytuesdayR)
+
 ```
 
 ## Dataset
@@ -16,7 +19,11 @@ library(tidyverse)
 ```{r}
 #| label: load-dataset
 #| message: false
+episodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')
+sauces <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')
+seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
 ```
+
 
 A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
 
@@ -27,13 +34,17 @@ The reason we chose this specific dataset is because a couple of us in the group
 ## Questions
 
 Q1 ) Is there any correlation between the scoville score of the sauce and the number of guests who did not finish trying all the sauces?
+
 1.1) Find the season which has the most unfinished contestants
+
 1.2) Compare that with the sauce score.
 
+1.3) Is there any correlation between the average scoville score and the number of episodes for a season.
 
+Q2 ) Are there any sauces that are used in more than one season? visualize which sauces and in which seasons?
 
 ## Analysis plan
 
-- For the first question, we plan on creating the variable "unfinished_count" which represents the number of guests that failed to try all the sauces for each season. Then we create another variable "average_scoville" which is the average of the variable "scoville" for each season. Then we can make a scatter plot in the first layer with "average_scovile" on the x-axis and "unfished_count" on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend.
-Here we calculate the "unfinished_count" variable from "episodes.csv" and the "average_scovile" variable from "sauces.csv". 
+-   For the first question, we plan on creating the variable "unfinished_count" which represents the number of guests that failed to try all the sauces for each season. Then we create another variable "average_scoville" which is the average of the variable "scoville" for each season. Then we can make a scatter plot in the first layer with "average_scovile" on the x-axis and "unfished_count" on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the "unfinished_count" variable from "episodes.csv" and the "average_scovile" variable from "sauces.csv".
 
+-   For the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a sunburst chart to visualize which season have more number of repetitive sauces.
