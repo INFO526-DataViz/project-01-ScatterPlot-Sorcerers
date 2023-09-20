@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project Title - Proposal title</title>
+<title>Project Title - Hot Ones Episodes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,8 +89,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -153,7 +152,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a>
+  <ul class="collapse">
+  <li><a href="#dataset-name---hot-ones-episodes" id="toc-dataset-name---hot-ones-episodes" class="nav-link" data-scroll-target="#dataset-name---hot-ones-episodes"><u><strong>Dataset Name - Hot Ones Episodes</strong></u></a></li>
+  <li><a href="#reason-to-choose-the-dataset" id="toc-reason-to-choose-the-dataset" class="nav-link" data-scroll-target="#reason-to-choose-the-dataset"><u><strong>Reason to choose the Dataset</strong></u></a></li>
+  </ul></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis plan</a></li>
   </ul>
@@ -164,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proposal title</h1>
+<h1 class="title">Hot Ones Episodes</h1>
 <p class="subtitle lead">Proposal</p>
 </div>
 
@@ -181,21 +184,171 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, tidytuesdayR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.</p>
-<p>Make sure to load the data and use inline code for some of this information.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>episodes <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sauces <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="dataset-name---hot-ones-episodes" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-name---hot-ones-episodes"><u><strong>Dataset Name - Hot Ones Episodes</strong></u></h3>
+<p>Hot Ones is a popular YouTube series which was started on 12th March 2015. The concept behind the show was to serve the guests with hot sauces which have varying heat and spiciness. The show often features rare and unique hot sauces from around the world, the spiciness of these sauces is measured by the Scoville scale.</p>
+<p>Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data Set that we choose contains three tables or three sets of data.</p>
+<ol type="1">
+<li><p>The first gives detailed information about the episodes</p>
+<ol type="a">
+<li><p>It contains the data about each episode till July 2023. The data set contains 300 observations.</p></li>
+<li><p>The fields and the explanation of the episode data set are as follows</p></li>
+</ol>
+<table class="table">
+<caption><strong>episodes.csv</strong></caption>
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>season</td>
+<td>The season number.</td>
+</tr>
+<tr class="even">
+<td>episode_overall</td>
+<td>The overall count of episode, from 1-300</td>
+</tr>
+<tr class="odd">
+<td>episode_season</td>
+<td>The count of this episode within this season</td>
+</tr>
+<tr class="even">
+<td>title</td>
+<td>The title of the episode</td>
+</tr>
+<tr class="odd">
+<td>original_release</td>
+<td>The date on which the episode was originally available on YouTube</td>
+</tr>
+<tr class="even">
+<td>guest</td>
+<td>The name of the guest</td>
+</tr>
+<tr class="odd">
+<td>guest_appearance_number</td>
+<td>The number of appearances by this guest so far as of this date</td>
+</tr>
+<tr class="even">
+<td>finished</td>
+<td>Whether the guest finished trying all of the sauces</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>The Second data set contains the data related to the sauces</p>
+<ol type="a">
+<li>Mainly it gives the description about the seasons in which the sauces were used and the Scoville scale reading (<a href="https://en.wikipedia.org/wiki/Scoville_scale" class="uri">https://en.wikipedia.org/wiki/Scoville_scale</a>)</li>
+<li>It contains 210 observations</li>
+<li>The variables used and the interpretation of the data table is as follows</li>
+</ol>
+<table class="table">
+<caption><strong>sauces.csv</strong></caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>season</td>
+<td>The season number</td>
+</tr>
+<tr class="even">
+<td>sauce_number</td>
+<td>The number of this sauce, from 1 (least hot) to 10 (hottest)</td>
+</tr>
+<tr class="odd">
+<td>sauce_name</td>
+<td>The name of the sauce</td>
+</tr>
+<tr class="even">
+<td>scoville</td>
+<td>The rating of the sauce in Scoville heat units.</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>The Third data set contains the data related to seasons</p>
+<ol type="a">
+<li>It mainly shows the episodes per season, release date and the end date of the season. The data set contains record of 21 observations.</li>
+<li>The variables used and their descriptions are as follows</li>
+</ol>
+<table class="table">
+<caption><strong>seasons.csv</strong></caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>season</td>
+<td>The season number</td>
+</tr>
+<tr class="even">
+<td>episodes</td>
+<td>The count of episodes in this season</td>
+</tr>
+<tr class="odd">
+<td>note</td>
+<td>Notes about this season</td>
+</tr>
+<tr class="even">
+<td>original_release</td>
+<td>The date of the first episode in this season</td>
+</tr>
+<tr class="odd">
+<td>last_release</td>
+<td>The date of the last episode of this season (if that episode has aired at the time of scraping)</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</section>
+<section id="reason-to-choose-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="reason-to-choose-the-dataset"><u><strong>Reason to choose the Dataset</strong></u></h3>
+<p>The dataset represents an intriguing and distinctive topic. It is neither too small for meaningful analysis nor excessively large to hinder us from drawing conclusions. It pertains to a subject that not only our team members are familiar with but is also widely recognized. Having watched the episodes and gaining insights into the data collection process, we found it easier to connect with the dataset and analyze it more effectively.</p>
+</section>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>The two questions you want to answer.</p>
+<p>Q1 ) Is there any correlation between the scoville score of the sauce and the number of guests who did not finish trying all the sauces?</p>
+<p>1.1) Find the season which has the most unfinished contestants</p>
+<p>1.2) Compare that with the sauce score.</p>
+<p>1.3) Is there any correlation between the average scoville score and the number of episodes for a season.</p>
+<p>Q2 ) Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?</p>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
 <ul>
-<li>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</li>
+<li><p>For the first question, we plan on creating the variable “unfinished_count” which represents the number of guests that failed to try all the sauces for each season. Then we create another variable “average_scoville” which is the average of the variable “scoville” for each season. Then we can make a scatter plot in the first layer with “average_scoville” on the x-axis and “unfinished_count” on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the “unfinished_count” variable from “episodes.csv” and the “average_scoville” variable from “sauces.csv”.</p></li>
+<li><p>For the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a sunburst chart to visualize which season have more number of repetitive sauces.</p></li>
 </ul>
 
 

@@ -24,11 +24,64 @@ sauces <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
 seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
 ```
 
-A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
+### [**Dataset Name - Hot Ones Episodes**]{.underline}
 
-Make sure to load the data and use inline code for some of this information.
+Hot Ones is a popular YouTube series which was started on 12th March 2015. The concept behind the show was to serve the guests with hot sauces which have varying heat and spiciness. The show often features rare and unique hot sauces from around the world, the spiciness of these sauces is measured by the Scoville scale.
 
-The reason we chose this specific dataset is because a couple of us in the group have seen the show and thought it would be fun. It also seems like it would be engaging to present for the rest of the class.
+Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data Set that we choose contains three tables or three sets of data.
+
+1.  The first gives detailed information about the episodes
+
+    a.  It contains the data about each episode till July 2023. The data set contains 300 observations.
+
+    b.  The fields and the explanation of the episode data set are as follows
+
+    | Variable Name           | Description                                                       |
+    |--------------------|----------------------------------------------------|
+    | season                  | The season number.                                                |
+    | episode_overall         | The overall count of episode, from 1-300                          |
+    | episode_season          | The count of this episode within this season                      |
+    | title                   | The title of the episode                                          |
+    | original_release        | The date on which the episode was originally available on YouTube |
+    | guest                   | The name of the guest                                             |
+    | guest_appearance_number | The number of appearances by this guest so far as of this date    |
+    | finished                | Whether the guest finished trying all of the sauces               |
+
+    : **episodes.csv**
+
+2.  The Second data set contains the data related to the sauces
+
+    a.  Mainly it gives the description about the seasons in which the sauces were used and the Scoville scale reading (<https://en.wikipedia.org/wiki/Scoville_scale>)
+    b.  It contains 210 observations
+    c.  The variables used and the interpretation of the data table is as follows
+
+    | Variable Name | Description                                                  |
+    |------------------|------------------------------------------------------|
+    | season        | The season number                                            |
+    | sauce_number  | The number of this sauce, from 1 (least hot) to 10 (hottest) |
+    | sauce_name    | The name of the sauce                                        |
+    | scoville      | The rating of the sauce in Scoville heat units.              |
+
+    : **sauces.csv**
+
+3.  The Third data set contains the data related to seasons
+
+    a.  It mainly shows the episodes per season, release date and the end date of the season. The data set contains record of 21 observations.
+    b.  The variables used and their descriptions are as follows
+
+    | Variable Name    | Description                                                                                     |
+    |-----------------|-------------------------------------------------------|
+    | season           | The season number                                                                               |
+    | episodes         | The count of episodes in this season                                                            |
+    | note             | Notes about this season                                                                         |
+    | original_release | The date of the first episode in this season                                                    |
+    | last_release     | The date of the last episode of this season (if that episode has aired at the time of scraping) |
+
+    : **seasons.csv**
+
+### [**Reason to choose the Dataset**]{.underline}
+
+The dataset represents an intriguing and distinctive topic. It is neither too small for meaningful analysis nor excessively large to hinder us from drawing conclusions. It pertains to a subject that not only our team members are familiar with but is also widely recognized. Having watched the episodes and gaining insights into the data collection process, we found it easier to connect with the dataset and analyze it more effectively.
 
 ## Questions
 

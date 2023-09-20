@@ -31,36 +31,36 @@
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
     "title": "Project title",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "section": "",
+    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide"
   },
   {
     "objectID": "presentation.html#layouts",
     "href": "presentation.html#layouts",
     "title": "Project title",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "section": "",
+    "text": "You can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis"
   },
   {
     "objectID": "presentation.html#code",
     "href": "presentation.html#code",
     "title": "Project title",
-    "section": "Code",
-    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+    "section": "",
+    "text": "# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
   },
   {
     "objectID": "presentation.html#plots",
     "href": "presentation.html#plots",
     "title": "Project title",
-    "section": "Plots",
-    "text": "Plots"
+    "section": "",
+    "text": "Warning: Removed 2 rows containing missing values (`geom_point()`)."
   },
   {
     "objectID": "presentation.html#plot-and-text",
     "href": "presentation.html#plot-and-text",
     "title": "Project title",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
+    "section": "",
+    "text": "Some text\ngoes here"
   },
   {
     "objectID": "presentation.html#tables",
@@ -74,7 +74,7 @@
     "href": "presentation.html#images",
     "title": "Project title",
     "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+    "text": "Images\n\n\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
@@ -107,29 +107,43 @@
   {
     "objectID": "proposal.html",
     "href": "proposal.html",
-    "title": "Proposal title",
+    "title": "Hot Ones Episodes",
     "section": "",
-    "text": "library(tidyverse)"
+    "text": "if (!require(\"pacman\"))\n  install.packages(\"pacman\")\npacman::p_load(tidyverse, tidytuesdayR)"
   },
   {
     "objectID": "proposal.html#dataset",
     "href": "proposal.html#dataset",
-    "title": "Proposal title",
+    "title": "Hot Ones Episodes",
     "section": "Dataset",
-    "text": "Dataset\nA brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.\nMake sure to load the data and use inline code for some of this information."
+    "text": "Dataset\n\nepisodes &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')\nsauces &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')\nseasons &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')\n\n\nDataset Name - Hot Ones Episodes\nHot Ones is a popular YouTube series which was started on 12th March 2015. The concept behind the show was to serve the guests with hot sauces which have varying heat and spiciness. The show often features rare and unique hot sauces from around the world, the spiciness of these sauces is measured by the Scoville scale.\nHot Ones Episodes is a data set comes from the TidyTuesday repository. The Data Set that we choose contains three tables or three sets of data.\n\nThe first gives detailed information about the episodes\n\nIt contains the data about each episode till July 2023. The data set contains 300 observations.\nThe fields and the explanation of the episode data set are as follows\n\n\nepisodes.csv\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nseason\nThe season number.\n\n\nepisode_overall\nThe overall count of episode, from 1-300\n\n\nepisode_season\nThe count of this episode within this season\n\n\ntitle\nThe title of the episode\n\n\noriginal_release\nThe date on which the episode was originally available on YouTube\n\n\nguest\nThe name of the guest\n\n\nguest_appearance_number\nThe number of appearances by this guest so far as of this date\n\n\nfinished\nWhether the guest finished trying all of the sauces\n\n\n\nThe Second data set contains the data related to the sauces\n\nMainly it gives the description about the seasons in which the sauces were used and the Scoville scale reading (https://en.wikipedia.org/wiki/Scoville_scale)\nIt contains 210 observations\nThe variables used and the interpretation of the data table is as follows\n\n\nsauces.csv\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nseason\nThe season number\n\n\nsauce_number\nThe number of this sauce, from 1 (least hot) to 10 (hottest)\n\n\nsauce_name\nThe name of the sauce\n\n\nscoville\nThe rating of the sauce in Scoville heat units.\n\n\n\nThe Third data set contains the data related to seasons\n\nIt mainly shows the episodes per season, release date and the end date of the season. The data set contains record of 21 observations.\nThe variables used and their descriptions are as follows\n\n\nseasons.csv\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nseason\nThe season number\n\n\nepisodes\nThe count of episodes in this season\n\n\nnote\nNotes about this season\n\n\noriginal_release\nThe date of the first episode in this season\n\n\nlast_release\nThe date of the last episode of this season (if that episode has aired at the time of scraping)\n\n\n\n\n\n\nReason to choose the Dataset\nThe dataset represents an intriguing and distinctive topic. It is neither too small for meaningful analysis nor excessively large to hinder us from drawing conclusions. It pertains to a subject that not only our team members are familiar with but is also widely recognized. Having watched the episodes and gaining insights into the data collection process, we found it easier to connect with the dataset and analyze it more effectively."
   },
   {
     "objectID": "proposal.html#questions",
     "href": "proposal.html#questions",
-    "title": "Proposal title",
+    "title": "Hot Ones Episodes",
     "section": "Questions",
-    "text": "Questions\nThe two questions you want to answer."
+    "text": "Questions\nQ1 ) Is there any correlation between the scoville score of the sauce and the number of guests who did not finish trying all the sauces?\n1.1) Find the season which has the most unfinished contestants\n1.2) Compare that with the sauce score.\n1.3) Is there any correlation between the average scoville score and the number of episodes for a season.\nQ2 ) Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?"
   },
   {
     "objectID": "proposal.html#analysis-plan",
     "href": "proposal.html#analysis-plan",
-    "title": "Proposal title",
+    "title": "Hot Ones Episodes",
     "section": "Analysis plan",
-    "text": "Analysis plan\n\nA plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any)."
+    "text": "Analysis plan\n\nFor the first question, we plan on creating the variable “unfinished_count” which represents the number of guests that failed to try all the sauces for each season. Then we create another variable “average_scoville” which is the average of the variable “scoville” for each season. Then we can make a scatter plot in the first layer with “average_scoville” on the x-axis and “unfinished_count” on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the “unfinished_count” variable from “episodes.csv” and the “average_scoville” variable from “sauces.csv”.\nFor the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a sunburst chart to visualize which season have more number of repetitive sauces."
+  },
+  {
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "Project title",
+    "section": "",
+    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide\n\n\n\n\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\n\n\n\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;\n\n\n\n\n\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nSome text\ngoes here"
+  },
+  {
+    "objectID": "presentation.html#footnotes",
+    "href": "presentation.html#footnotes",
+    "title": "Project title",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAnd add footnotes↩︎"
   }
 ]
