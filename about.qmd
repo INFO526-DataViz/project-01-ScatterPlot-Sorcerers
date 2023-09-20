@@ -8,7 +8,7 @@ This project was developed by ScatterPlot Sorcerers. For [INFO 526 - Data Analys
 
 -   Team member 1: Akrant Varshney, is a 1st year graduate student in the Data Science program with the School of Infoormation.
 
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
+-   Team member 2: Hariharan Ramesh, is a 1st year graduate student in the Data Science program with the School of Information.
 
 -   Team member 3: Thanoosha Naidu Karri, is a 1st year graduate student in the Data Science program with the School of Information.
 
