@@ -28,9 +28,9 @@ seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 
 Hot Ones is a popular YouTube series which was started on 12th March 2015. The concept behind the show was to serve the guests with hot sauces which have varying heat and spiciness. The show often features rare and unique hot sauces from around the world, the spiciness of these sauces is measured by the Scoville scale.
 
-Best Last Dab Reactions of All Time Video
+Best Last Dab Reactions of All Time Video  - In case you are unfamiliar with the show Hot Ones
 
-https://youtu.be/-at3oShfXH8?si=iYmT2YOsBiBPwFap
+<https://youtu.be/-at3oShfXH8?si=iYmT2YOsBiBPwFap>
 
 Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data Set that we choose contains three tables or three sets of data.
 
