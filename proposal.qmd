@@ -97,7 +97,7 @@ Q1 ) Is there any correlation between the scoville score of the sauce and the nu
 
 1.3) Is there any correlation between the average scoville score and the number of episodes for a season.
 
-Q2 ) How does the scoville scale of the sauces used in "Hot Ones" episodes change over different seasons? Is there any correlation between the distributions and the length of the seasons?
+Q2 ) How does the scoville scale of the sauces used in "Hot Ones" episodes change over different seasons? Is there any correlation between the average scoville scale number of the season and the length of the seasons?
 
 ## Analysis plan
 
