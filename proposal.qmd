@@ -40,31 +40,31 @@ Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data 
 
     b.  The fields and the explanation of the episode data set are as follows
 
-    | Variable Name           | Description                                                       |
-    |-----------------------|------------------------------------------------|
-    | season                  | The season number.                                                |
-    | episode_overall         | The overall count of episode, from 1-300                          |
-    | episode_season          | The count of this episode within this season                      |
-    | title                   | The title of the episode                                          |
-    | original_release        | The date on which the episode was originally available on YouTube |
-    | guest                   | The name of the guest                                             |
-    | guest_appearance_number | The number of appearances by this guest so far as of this date    |
-    | finished                | Whether the guest finished trying all of the sauces               |
+    | Variable Name           | Data Type | Description                                                        |
+    |:--------------------------|:-----------------|:--------------------------|
+    | season                  | integer   | The season number.                                                 |
+    | episode_overall         | integer   | The overall count of this episode, from 1-300.                     |
+    | episode_season          | integer   | The count of this episode within this season.                      |
+    | title                   | character | The title of the episode.                                          |
+    | original_release        | date      | The date on which the episode was originally available on YouTube. |
+    | guest                   | character | The name of the guest.                                             |
+    | guest_appearance_number | integer   | The number of appearances by this guest so far as of this date.    |
+    | finished                | logical   | Whether the guest finished trying all of the sauces.               |
 
     : **episodes.csv**
 
 2.  The second data set contains the data related to the sauces
- 
+
     a.  Mainly it gives the description about the seasons in which the sauces were used and the Scoville scale reading (<https://en.wikipedia.org/wiki/Scoville_scale>)
     b.  It contains 210 observations
     c.  The variables used and the interpretation of the data table is as follows
 
-    | Variable Name | Description                                                  |
-    |---------------------|---------------------------------------------------|
-    | season        | The season number                                            |
-    | sauce_number  | The number of this sauce, from 1 (least hot) to 10 (hottest) |
-    | sauce_name    | The name of the sauce                                        |
-    | scoville      | The rating of the sauce in Scoville heat units.              |
+   |Variable Name     |Data Type     |Description  |
+|:------------|:---------|:------------|
+|season       |integer   |The season number. |
+|sauce_number |integer   |The number of this sauce, from 1 (least hot) to 10 (hottest). |
+|sauce_name   |character |The name of the sauce. |
+|scoville     |integer   |The rating of the sauce in [Scoville heat units](https://en.wikipedia.org/wiki/Scoville_scale). |
 
     : **sauces.csv**
 
@@ -72,15 +72,14 @@ Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data 
 
     a.  It mainly shows the episodes per season, release date and the end date of the season. The data set contains record of 21 observations.
     b.  The variables used and their descriptions are as follows
-
-    | Variable Name    | Description                                                                                     |
-    |--------------------|----------------------------------------------------|
-    | season           | The season number                                                                               |
-    | episodes         | The count of episodes in this season                                                            |
-    | note             | Notes about this season                                                                         |
-    | original_release | The date of the first episode in this season                                                    |
-    | last_release     | The date of the last episode of this season (if that episode has aired at the time of scraping) |
-
+|Variable Name         | Data Type     |Description      |
+|:----------------|:---------|:----------------|
+|season           |integer   |The season number. |
+|episodes         |integer   |The count of episodes in this season. |
+|note             |character |Notes about this season. |
+|original_release |date      |The date of the first episode in this season. |
+|last_release     |date      |The date of the last episode of this season (if that episode has aired at the time of scraping). |
+  
     : **seasons.csv**
 
 ### [**Reason to choose the Dataset**]{.underline}
@@ -89,7 +88,7 @@ The dataset represents an intriguing and distinctive topic. It is neither too sm
 
 ## Questions
 
-Q1 ) How does the average scoville score of the season affect the number of guests who did not finish trying all the sauces? 
+Q1 ) How does the average scoville score of the season affect the number of guests who did not finish trying all the sauces?
 
 Q2 ) How does the scoville scale of the sauces used in "Hot Ones" episodes change over different seasons?
 
