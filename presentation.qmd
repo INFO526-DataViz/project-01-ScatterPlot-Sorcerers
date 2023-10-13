@@ -52,7 +52,7 @@ mtcars$speed <- mtcars$hp / mtcars$wt
 data("penguins")
 ```
 
-::: {style="margin-top:0px;"}
+::: {style="margin-top:0px; backgroung-color:blue;"}
 ## So what is the Hot ones ?
 
 Eat and feel the heat
