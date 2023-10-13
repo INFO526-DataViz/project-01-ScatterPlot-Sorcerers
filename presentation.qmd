@@ -75,25 +75,55 @@ Eat and feel the heat
 
 ![](images/Sauces(img_transparent).png){fig-alt="sauces and program explained" fig-align="center" width="100%"}
 
-## Why this Data set ?
-
-The rationale behind selecting this dataset is its unique and engaging subject matter. Being a topic that resonates with many, including our team members, it offers an opportunity for a meaningful and relatable analysis. Through this project, we aim to explore patterns, trends, and interesting insights related to the show, the sauces, and the guests' experiences.
+## Why this Data set ABOUT?
 
 ::: columns
 ::: {.column width="40%"}
--   or bullet points[^1]
+"Hot Ones" YouTube series overview
+
+More than just a hot wing challenge
+
+**Popularity Factors**
+
+-   Concept of "schadenfreude"
+
+-   Candid celebrity conversations
+
+-   Unexpected reactions
 :::
 
 ::: {.column width="60%"}
-or in two columns
+![Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast](images/Picture1-01.png){fig-alt="Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast"}
+
+![Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast](images/MelissaMcCarthy.jpg){fig-alt="Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast"}
 :::
 :::
 
-[^1]: And add footnotes
+# Why this Data set?
 
--   like
+::: columns
+::: {.column width="50%"}
+**Cultural Impact**
 
--   this
+-   Memes, gifs, and sayings
+
+-   Resonance with global audiences
+
+**Dataset Selection**
+
+-   TidyTuesday repository
+
+-   "Hot Ones Episodes" dataset spotlight
+
+-   Team's diverse familiarity with the show
+:::
+
+::: {.column width="50%"}
+!["Hey, look at us." meme/gif of Paul Rudd. Credit First We Feast](images/PaulRudd.jpeg){fig-alt="\"Hey, look at us.\" meme/gif of Paul Rudd. Credit First We Feast"}
+
+![Aubrey Plaza snorts milk. Credit: First We Feast](images/AubreyPlazaSnortsMilk.png){fig-alt="Aubrey Plaza snorts milk. Credit: First We Feast"}
+:::
+:::
 
 ## Code
 
