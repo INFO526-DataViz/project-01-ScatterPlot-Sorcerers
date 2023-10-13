@@ -52,17 +52,32 @@ mtcars$speed <- mtcars$hp / mtcars$wt
 data("penguins")
 ```
 
-# Using Quarto for presentations
+::: {style="margin-top:0px;"}
+## So what is the Hot ones ?
 
-## Quarto
+Eat and feel the heat
 
--   The presentation is created using the Quarto CLI
+![](images/Untitled-removebg-preview.png){fig-align="center" width="488"}
 
--   `##` sets the start of a new slide
+```{=html}
+<pre style="margin-top:0px; margin-bottom:50px"><center>Mild                                    Wild</center></pre>
+```
+<div>
 
-## Layouts
+![](images/intro-1556638929.jpg){fig-align="center" width="321" height="203"}
 
-You can use plain text
+</div>
+:::
+
+## Scoville Scale
+
+*Well we all know guns right ?*
+
+![](images/Sauces(img_transparent).png){fig-alt="sauces and program explained" fig-align="center" width="100%"}
+
+## Why this Data set ?
+
+The rationale behind selecting this dataset is its unique and engaging subject matter. Being a topic that resonates with many, including our team members, it offers an opportunity for a meaningful and relatable analysis. Through this project, we aim to explore patterns, trends, and interesting insights related to the show, the sauces, and the guests' experiences.
 
 ::: columns
 ::: {.column width="40%"}
