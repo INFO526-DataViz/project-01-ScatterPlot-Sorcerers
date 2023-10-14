@@ -93,9 +93,9 @@ More than just a hot wing challenge
 :::
 
 ::: {.column width="60%"}
-![Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast](images/Picture1.png){fig-alt="Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast"}
+![Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast](images/Picture1.png){fig-alt="Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast" width="422"}
 
-![Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast](images/MelissaMcCarthy.jpg){fig-alt="Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast"}
+![Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast](images/MelissaMcCarthy.jpg){fig-alt="Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast" width="427"}
 :::
 :::
 
@@ -119,9 +119,9 @@ More than just a hot wing challenge
 :::
 
 ::: {.column width="50%"}
-!["Hey, look at us." meme/gif of Paul Rudd. Credit First We Feast](images/PaulRudd.jpeg){fig-alt="\"Hey, look at us.\" meme/gif of Paul Rudd. Credit First We Feast"}
+!["Hey, look at us." meme/gif of Paul Rudd. Credit First We Feast](images/PaulRudd.jpeg){fig-alt="\"Hey, look at us.\" meme/gif of Paul Rudd. Credit First We Feast" width="379"}
 
-![Aubrey Plaza snorts milk. Credit: First We Feast](images/AubreyPlazaSnortsMilk.png){fig-alt="Aubrey Plaza snorts milk. Credit: First We Feast"}
+![Aubrey Plaza snorts milk. Credit: First We Feast](images/AubreyPlazaSnortsMilk.png){fig-alt="Aubrey Plaza snorts milk. Credit: First We Feast" width="393"}
 :::
 :::
 
