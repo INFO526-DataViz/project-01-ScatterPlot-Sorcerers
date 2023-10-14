@@ -93,7 +93,7 @@ More than just a hot wing challenge
 :::
 
 ::: {.column width="60%"}
-![Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast](images/Picture1-01.png){fig-alt="Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast"}
+![Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast](images/Picture1.png){fig-alt="Billie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast"}
 
 ![Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast](images/MelissaMcCarthy.jpg){fig-alt="Melissa McCarthy uses a spray bottle full of milk. Credit: First We Feast"}
 :::
