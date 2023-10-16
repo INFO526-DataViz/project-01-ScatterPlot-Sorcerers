@@ -23,17 +23,24 @@ execute:
 #| include: false
 
 # Load packages here
-pacman::p_load(tidymodels,
-               tidyverse)
-
+if (!require("pacman"))
+  install.packages("pacman")
+pacman::p_load(tidyverse, tidytuesdayR,GGally,dplyr,ggplot2,ggplot2,
+               fs,
+               scales,
+               dsbox,
+               ggridges,
+               dplyr,
+               forcats,
+               palmerpenguins,
+               janitor,
+               tidyverse,
+               lubridate)
 ```
 
 ```{r}
 #| label: setup
 #| include: false
-
-# Plot theme
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 11))
 
 # For better figure resolution
 knitr::opts_chunk$set(
@@ -48,10 +55,9 @@ knitr::opts_chunk$set(
 #| label: load-data
 #| include: false
 # Load data here
-data(mtcars)
-mtcars$speed <- mtcars$hp / mtcars$wt
-
-data("penguins")
+episodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')
+sauces <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')
+seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
 ```
 
 ##  {auto-animate="true"}
@@ -125,24 +131,47 @@ More than just a hot wing challenge
 :::
 :::
 
-## Code
+
+## Question-2
+
+Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?
 
 ```{r, echo=FALSE}
-model <- lm(mpg ~ speed, data = mtcars) 
-
-model |> tidy()
-
-model |> glance()
-
+#data cleaning
+sauces$sauce_name<-ifelse(sauces$sauce_name=="Da' Bomb Beyond Insanity","Da' Bomb – Beyond Insanity",sauces$sauce_name)
+rep_sauces<-sauces|>
+  group_by(sauce_name)|>
+  mutate(count=n(), firstapp=min(season))|>
+  filter(count>1)
+#getting the frequency of repetitions of sauces
+uniq<-sauces|>
+  group_by(sauce_name)|>
+  summarize(c=n(), firstapp=min(season))|>
+  filter(c>1)|>
+  arrange(firstapp)
 ```
 
-## Plots
+## Plot
 
-```{r}
-penguins |>
-  mutate(species = ifelse(species == "Adelie", "Adelie", "Other")) |>
-  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
-  geom_point()
+```{r, fig.width=10, fig.height=5}
+rep_sauces|>
+ggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+
+  geom_line(linewidth=2)+
+  #added the color scale
+  scale_color_gradient(low="orange",high="red")+
+  scale_x_continuous(breaks=c(1:21))+
+  #adding the frequency of each sauce
+  annotate("text",x=22,y=1:15,label=uniq$c)+
+  #text labeling
+  annotate("text",x=24,y=8,label="Repetition Rate of Sauces",angle="270")+
+  #removing grids and adjusting the sauce name's size on x-axis
+  theme(
+    panel.background = element_rect(fill = "white"),
+    axis.text.y=element_text(size=10),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x=element_blank()
+  )+
+  labs(x="Season",y="Sauce Name",title="Occurrences of Repeated Sauces")
 ```
 
 ## Plot and text
