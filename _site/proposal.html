@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -104,6 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">From Mild to Wild</span>
     </a>
@@ -188,18 +191,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, tidytuesdayR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-The downloaded binary packages are in
-    /var/folders/t4/0lj2wnz53w97tz8rpn_wrd9r0000gn/T//Rtmp3g8RUT/downloaded_packages</code></pre>
-</div>
 </div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>episodes <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sauces <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>episodes <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sauces <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="dataset-name---hot-ones-episodes" class="level3">
 <h3 class="anchored" data-anchor-id="dataset-name---hot-ones-episodes"><u><strong>Dataset Name - Hot Ones Episodes</strong></u></h3>
@@ -269,8 +267,8 @@ The downloaded binary packages are in
 <table class="table">
 <caption><strong>sauces.csv</strong></caption>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 80%">
+<col style="width: 23%">
+<col style="width: 76%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -305,8 +303,8 @@ The downloaded binary packages are in
 <table class="table">
 <caption><strong>seasons.csv</strong></caption>
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 22%">
+<col style="width: 77%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -347,13 +345,13 @@ The downloaded binary packages are in
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <p>Q1 ) How does the average scoville score of the season affect the number of guests who did not finish trying all the sauces?</p>
-<p>Q2 ) How does the scoville scale of the sauces used in “Hot Ones” episodes change over different seasons?</p>
+<p>Q2 ) Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?</p>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
 <ul>
 <li><p>For the first question, we plan on creating the variable “unfinished_count” which represents the number of guests that failed to try all the sauces for each season. Then we create another variable “average_scoville” which is the average of the variable “scoville” for each season. Then we can make a scatter plot in the first layer with “average_scoville” on the x-axis and “unfinished_count” on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the “unfinished_count” variable from “episodes.csv” and the “average_scoville” variable from “sauces.csv”. We are planning to find out the season which has the most unfinished contestants and analyse the sauce score for that. This way, we will be able to tell if the average scoville score have any impact on the number of contestants that failed to try all the sauces.</p></li>
-<li><p>For the second question, we plan on extracting the average scoville scale data of the sauces that appeared in each of the seasons, for all of the seasons, and draw box plots (or violin plot.). We will compare compare it to a bar plot which represents the entire length of the season as the seasons length (number of episodes) were not the same for each season. By doing this we will see if seasons that had a higher average number of scoville scale data had shorter seasons (number of episodes), and seasons with a lower overall average scoville scale number had more episodes within a season.</p></li>
+<li><p>For the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a line chart to visualize which season has more number of repetitive sauces. In other words, this will show the sauces that were used multiple times throughout the seasons. We want to do this because every season they change most of the lineup of hot sauces used and we would like to see which hot sauces remained in use in multiple seasons. By doing this, we can see if the scoville of the hot sauces reused was higher or lower than the average scoville of the season.</p></li>
 </ul>
 
 

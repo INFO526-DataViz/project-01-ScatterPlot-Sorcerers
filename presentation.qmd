@@ -3,9 +3,9 @@ title: "From Mild to Wild"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
 author: "ScatterPlot-Sorcerers"
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-image: images/TitlePage_BG.jpg
   data-background-size: stretch
-  data-background-opacity: "0.7"
+  data-background-opacity: "0.4"
   data-slide-number: none
 format:
   revealjs:
@@ -60,28 +60,28 @@ sauces <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
 seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
 ```
 
-##  {auto-animate="true"}
+## So what is The Hot Ones ? {auto-animate="true"}
 
-### So what is the Hot ones ? {transition="concave-in slide-out"}
-
-![](images/Untitled-removebg-preview.png){fig-align="center"}
-
-##  {auto-animate="true"}
-
-### So what is the Hot ones ? {transition="concave-in slide-out"}
-
-![](images/intro-1556638929.jpg)
+![](images/joji-hot-ones.gif){fig-alt="sauces and program explained" fig-align="center" width="100%"}
 
 ```{=html}
-<pre style="font-size:100%"><b>Eat and feel the heat</b></pre>
+<pre style="text-align:center; font-size:50px"><strong>Eat to feel the Heat</strong></pre>
 ```
-## Scoville Scale {transition="convax-in slide-out"}
+
+## So what is The Hot Ones ? {auto-animate="true"}
+
+![](images/Transition.png){fig-alt="sauces and program explained" fig-align="center" width="100%"}
+
+```{=html}
+<pre style="text-align:center; font-size:50px"><strong>The Transition of the Guest</strong></pre>
+```
+## Scoville Scale {transition="concave-in slide-out"}
 
 *Well we all know guns right ?*
 
 ![](images/Sauces(img_transparent).png){fig-alt="sauces and program explained" fig-align="center" width="100%"}
 
-## Why this Data set ABOUT?
+## What this Data set is ABOUT? {transition="zoom-in fade-out"}
 
 ::: columns
 ::: {.column width="40%"}
@@ -131,10 +131,79 @@ More than just a hot wing challenge
 :::
 :::
 
+## Question-1 {.center auto-animate="true"}
 
-## Question-2
+Failure to finish the sauces in relation to scoville score ?
+
+## Question-1 {auto-animate="true"}
+The Plot
+
+```{r, echo=FALSE}
+
+# Importing the required libraries
+library(readr)
+library(dplyr)
+library(scales)
+library(ggplot2)
+
+# Reading the data
+episodes <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')
+sauces <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')
+seasons <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
+
+
+#Creating the data frame with mean scoville score of each season
+scoville_scores <- sauces %>%
+  group_by(season) %>%
+  summarize(avg_scoville = mean(scoville, na.rm = TRUE))
+
+# Filtering the columns with unfinished contestants
+unfinished_df <- episodes[episodes$finished == FALSE, ]
+
+max_avg_scoville <- max(scoville_scores$avg_scoville)
+scale_factor <- 3 / max_avg_scoville
+
+# Function to 
+map_y2 <- function(y) y * scale_factor
+
+# Pre-format the labels for the right y-axis using scales::number_format
+formatted_labels <- number_format(scale = 0.001, accuracy = 1, suffix = "K")(c(0.00, 0.75, 1.50, 2.25, 3.00) / scale_factor)
+
+plt <- ggplot() +
+  geom_histogram(data = unfinished_df, aes(x = season), fill = "#4DBDC7", binwidth = 1) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(color = "#4DBDC7"), axis.title.y = element_text(color = "#4DBDC7"))
+
+# Modify the scale_y_continuous function to set the limits for both axes
+plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
+  geom_smooth(data = scoville_scores, aes(season, map_y2(avg_scoville)), se = FALSE, color = "#EE70F2") +
+  labs(x = "Season",
+       y = "Number of Unfinished contestants",
+       title = "Average Scoville Score vs Number of Unfinished Contestants",
+       subtitle = "by Season",
+       caption = "Source: Tidytuesday") +
+  theme(axis.text.y.right = element_text(color = "#EE70F2"), axis.title.y.right = element_text(color = "#EE70F2")) +
+  scale_y_continuous(
+    limits = c(0, 3),  # Set limits for the left y-axis
+    sec.axis = sec_axis(
+      trans = ~ . / scale_factor,
+      name = "Average Scoville Score",
+      breaks = seq(0, max_avg_scoville, by = max_avg_scoville / 4),
+      labels = formatted_labels
+    ) # Set breaks and labels for the right y-axis
+  )
+
+```
+
+
+
+
+## Question-2{.center data-transition="concave-in convex-out" auto-animate="true"}
 
 Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?
+
+## Question-2{.center data-transition="concave-in convex-out" auto-animate="true"}
+The Plot
 
 ```{r, echo=FALSE}
 #data cleaning
@@ -151,7 +220,7 @@ uniq<-sauces|>
   arrange(firstapp)
 ```
 
-## Plot
+
 
 ```{r, fig.width=10, fig.height=5}
 rep_sauces|>
@@ -174,43 +243,6 @@ ggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+
   labs(x="Season",y="Sauce Name",title="Occurrences of Repeated Sauces")
 ```
 
-## Plot and text
-
-::: columns
-::: {.column width="50%"}
--   Some text
-
--   goes here
-:::
-
-::: {.column width="50%"}
-```{r, warning=FALSE, fig.width=5.5}
-penguins |>
-  ggplot(aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot(linewidth = 0.75,
-               outlier.size = 2.5) +
-  theme_minimal(base_size = 15) +
-  theme(legend.key.size = unit(0.8, "cm"))
-```
-:::
-:::
-
-# A new section...
-
-## Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r}
-penguins |> 
-  head() |>
-  kableExtra::kable() |>
-  kableExtra::kable_styling()
-```
-
-## Images
-
-![Image credit: Danielle Navarro, Percolate.](images/watercolour_sys02_img34_teacup-ocean.png){fig-align="center" width="500"}
 
 ## Math Expressions {.smaller}
 
@@ -230,10 +262,6 @@ Limitations:
 
 2.  There should not be spaces after the opening `$` or before the closing `$`.
 
-# Wrap up
 
-## Feeling adventurous?
+## Thank You {.center}
 
--   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
--   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.

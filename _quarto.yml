@@ -4,9 +4,12 @@ project:
 website:
   title: From Mild to Wild
   navbar:
+    
     right:
       - icon: github
         href: https://github.com/INFO526-DataViz/project-01
+      
+      
     left:
       - text: Project
         href: index.qmd
@@ -16,10 +19,12 @@ website:
         href: presentation.qmd
       - text: About
         href: about.qmd
+    logo: images/logo.png
+    favicon:  images/logo.png
 
 format:
   html:
-    theme: default
+    theme: Sketchy
     toc: true
 
 execute:
