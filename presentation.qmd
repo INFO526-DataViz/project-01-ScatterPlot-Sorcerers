@@ -197,7 +197,6 @@ plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
 
 
 
-
 ## Question-2{.center data-transition="concave-in convex-out" auto-animate="true"}
 
 Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?
