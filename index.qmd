@@ -9,3 +9,78 @@ editor: visual
 ## Abstract
 
 Add project abstract here.
+
+# Question 1: Failure to finish the sauces in relation to scoville score.
+
+## Introduction:
+
+Looking at the data set, the first thing that we were interested in finding out was the relation between scoville scores and the failure rate. Different sauces are used for different season so there will be a change in the scoville scores too. Since the scoville score represents the measure of the spiciness of the sauce, it is expected to have an effect on the failure rate because it is natural for more people to give up early if the scoville score of the is too high. In order to validate this, we are planning to plot the average scoville score of each season along with the number of contestants that failed to try all the sauces for each season. We have used the "episodes.csv" and the "sauces.csv" to do the same. We plan on making a histogram for the failure count and a geom_smooth plot for the average scoville score. Both will be plotted in a single plot so that it would be easier to compare the trends between both failure count and average scoville score. 
+
+## Approach
+
+First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinshed_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator. Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function.
+Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot. 
+
+## Analysis
+### Code
+```{r label-me-1, warning = FALSE, message = FALSE}
+# Importing the required libraries
+library(readr)
+library(dplyr)
+library(scales)
+library(ggplot2)
+
+# Reading the data
+episodes <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')
+sauces <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')
+seasons <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
+
+
+#Creating the data frame with mean scoville score of each season
+scoville_scores <- sauces %>%
+  group_by(season) %>%
+  summarize(avg_scoville = mean(scoville, na.rm = TRUE))
+
+# Filtering the columns with unfinished contestants
+unfinished_df <- episodes[episodes$finished == FALSE, ]
+
+max_avg_scoville <- max(scoville_scores$avg_scoville)
+scale_factor <- 3 / max_avg_scoville
+
+# Function to 
+map_y2 <- function(y) y * scale_factor
+
+# Pre-format the labels for the right y-axis using scales::number_format
+formatted_labels <- number_format(scale = 0.001, accuracy = 1, suffix = "K")(c(0.00, 0.75, 1.50, 2.25, 3.00) / scale_factor)
+
+plt <- ggplot() +
+  geom_histogram(data = unfinished_df, aes(x = season), fill = "#4DBDC7", binwidth = 1) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(color = "#4DBDC7"), axis.title.y = element_text(color = "#4DBDC7"))
+
+# Modify the scale_y_continuous function to set the limits for both axes
+plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
+  geom_smooth(data = scoville_scores, aes(season, map_y2(avg_scoville)), se = FALSE, color = "#EE70F2") +
+  labs(x = "Season",
+       y = "Number of Unfinished contestants",
+       title = "Average Scoville Score vs Number of Unfinished Contestants",
+       subtitle = "by Season",
+       caption = "Source: Tidytuesday") +
+  theme(axis.text.y.right = element_text(color = "#EE70F2"), axis.title.y.right = element_text(color = "#EE70F2")) +
+  scale_y_continuous(
+    limits = c(0, 3),  # Set limits for the left y-axis
+    sec.axis = sec_axis(
+      trans = ~ . / scale_factor,
+      name = "Average Scoville Score",
+      breaks = seq(0, max_avg_scoville, by = max_avg_scoville / 4),
+      labels = formatted_labels
+    ) # Set breaks and labels for the right y-axis
+  )
+
+
+```
+
+
+## Discussion
+As discussed before, we naturally expect the number of unfinished contestant to increase as the average spiciness(scoville score) of the sauces increases. Interestingly, the result that we got from the plot is contradicting that assumption. We can see from the plot that the average scoville score has been increasing through out the seasons as the line goes up, while the number of contestents who failed to try all the sauces kept decreasing. 
+One of the possible explanations for this trend is the fact that people were more worried about not having their name in the hall of shame when compared to tolerating the spiciness of the sauces. And as the popularity of the show kept increasing as newer seasons came out, the contestants pride outweighed the spiciness of the sauces. Moreover, the contestants were rewarded with a 30-second promotion for their next project if they win. So all these factors made them brave enough to eat all of the ten wings in the later seasons. 
