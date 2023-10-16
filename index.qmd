@@ -46,15 +46,11 @@ Purpose: Visualizing the trend followed by the average scoville score across the
 
 First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinished_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator.
 
-Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.
+Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we
+can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.
 
 ## Analysis
 
-First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinshed_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator. Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.
-
-## Analysis
-
-### Code
 
 ```{r label-me-1, warning = FALSE, message = FALSE}
 # Importing the required libraries
