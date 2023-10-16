@@ -24,7 +24,7 @@ website:
 
 format:
   html:
-    theme: Sketchy
+    theme: sketchy
     toc: true
 
 execute:
