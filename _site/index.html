@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -137,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/INFO526-DataViz/project-01" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/INFO526-DataViz/project-01-ScatterPlot-Sorcerers" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -162,10 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction:</a></li>
   <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
-  <ul class="collapse">
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
-  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul></li>
   <li><a href="#question-2-occurrences-of-repeated-sauces" id="toc-question-2-occurrences-of-repeated-sauces" class="nav-link" data-scroll-target="#question-2-occurrences-of-repeated-sauces">Question 2: Occurrences of Repeated Sauces</a>
@@ -174,8 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#approach-1" id="toc-approach-1" class="nav-link" data-scroll-target="#approach-1">Approach:</a></li>
   <li><a href="#analysis-1" id="toc-analysis-1" class="nav-link" data-scroll-target="#analysis-1">Analysis:</a>
   <ul class="collapse">
-  <li><a href="#code-1" id="toc-code-1" class="nav-link" data-scroll-target="#code-1">Code</a></li>
-  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">Plot:</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   </ul></li>
   <li><a href="#discussions" id="toc-discussions" class="nav-link" data-scroll-target="#discussions">Discussions:</a></li>
   </ul></li>
@@ -230,12 +227,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="approach" class="level2">
 <h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinshed_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator. Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.</p>
+<p><strong>Histogram:</strong></p>
+<p>Purpose: Visualizing the distribution and trend followed by the number of contestants that failed to try all the sauces over the seasons.</p>
+<p><strong>Geom_smooth:</strong></p>
+<p>Purpose: Visualizing the trend followed by the average scoville score across the seasons.</p>
+<p>First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinished_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator.</p>
+<p>Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.</p>
 </section>
 <section id="analysis" class="level2">
 <h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<section id="code" class="level3">
-<h3 class="anchored" data-anchor-id="code">Code</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the required libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
@@ -243,10 +243,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the data</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>episodes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sauces <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv'</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading Data</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>episodes <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sauces <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>seasons <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv'</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating the data frame with mean scoville score of each season</span></span>
@@ -267,33 +267,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>formatted_labels <span class="ot">&lt;-</span> <span class="fu">number_format</span>(<span class="at">scale =</span> <span class="fl">0.001</span>, <span class="at">accuracy =</span> <span class="dv">1</span>, <span class="at">suffix =</span> <span class="st">"K"</span>)(<span class="fu">c</span>(<span class="fl">0.00</span>, <span class="fl">0.75</span>, <span class="fl">1.50</span>, <span class="fl">2.25</span>, <span class="fl">3.00</span>) <span class="sc">/</span> scale_factor)</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> unfinished_df, <span class="fu">aes</span>(<span class="at">x =</span> season), <span class="at">fill =</span> <span class="st">"#4DBDC7"</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> unfinished_df, <span class="fu">aes</span>(<span class="at">x =</span> season), <span class="at">fill =</span> <span class="st">"orange"</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#4DBDC7"</span>), <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#4DBDC7"</span>))</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the scale_y_continuous function to set the limits for both axes</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> scoville_scores, <span class="fu">aes</span>(season, <span class="fu">map_y2</span>(avg_scoville))) <span class="sc">+</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> scoville_scores, <span class="fu">aes</span>(season, <span class="fu">map_y2</span>(avg_scoville)), <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"#EE70F2"</span>) <span class="sc">+</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Season"</span>,</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of Unfinished contestants"</span>,</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Average Scoville Score vs Number of Unfinished Contestants"</span>,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"by Season"</span>,</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Tidytuesday"</span>) <span class="sc">+</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y.right =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#EE70F2"</span>), <span class="at">axis.title.y.right =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#EE70F2"</span>)) <span class="sc">+</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>),  <span class="co"># Set limits for the left y-axis</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">trans =</span> <span class="sc">~</span> . <span class="sc">/</span> scale_factor,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Average Scoville Score"</span>,</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, max_avg_scoville, <span class="at">by =</span> max_avg_scoville <span class="sc">/</span> <span class="dv">4</span>),</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> formatted_labels</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    ) <span class="co"># Set breaks and labels for the right y-axis</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"orange"</span>), </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"orange"</span>))</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the scale_y_continuous function to set the limits for both axes</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> scoville_scores, <span class="fu">aes</span>(season, <span class="fu">map_y2</span>(avg_scoville))) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> scoville_scores, <span class="fu">aes</span>(season, <span class="fu">map_y2</span>(avg_scoville)), <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Season"</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of Unfinished contestants"</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Average Scoville Score vs Number of Unfinished Contestants"</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"by Season"</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Tidytuesday"</span>) <span class="sc">+</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y.right =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"red"</span>), <span class="at">axis.title.y.right =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>),  <span class="co"># Set limits for the left y-axis</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">trans =</span> <span class="sc">~</span> . <span class="sc">/</span> scale_factor,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">"Average Scoville Score"</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, max_avg_scoville, <span class="at">by =</span> max_avg_scoville <span class="sc">/</span> <span class="dv">4</span>),</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> formatted_labels</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    ) <span class="co"># Set breaks and labels for the right y-axis</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/label-me-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
@@ -321,476 +321,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="analysis-1" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-1">Analysis:</h2>
-<section id="code-1" class="level3">
-<h3 class="anchored" data-anchor-id="code-1">Code</h3>
+<section id="code" class="level3">
+<h3 class="anchored" data-anchor-id="code">Code</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#data cleaning</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sauces<span class="sc">$</span>sauce_name<span class="ot">&lt;-</span><span class="fu">ifelse</span>(sauces<span class="sc">$</span>sauce_name<span class="sc">==</span><span class="st">"Da' Bomb Beyond Insanity"</span>,<span class="st">"Da' Bomb – Beyond Insanity"</span>,sauces<span class="sc">$</span>sauce_name)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sauces</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    season sauce_number
-1        1            1
-2        1            2
-3        1            3
-4        1            4
-5        1            5
-6        1            6
-7        1            7
-8        1            8
-9        1            9
-10       1           10
-11       2            1
-12       2            2
-13       2            3
-14       2            4
-15       2            5
-16       2            6
-17       2            7
-18       2            8
-19       2            9
-20       2           10
-21       3            1
-22       3            2
-23       3            3
-24       3            4
-25       3            5
-26       3            6
-27       3            7
-28       3            8
-29       3            9
-30       3           10
-31       4            1
-32       4            2
-33       4            3
-34       4            4
-35       4            5
-36       4            6
-37       4            7
-38       4            8
-39       4            9
-40       4           10
-41       5            1
-42       5            2
-43       5            3
-44       5            4
-45       5            5
-46       5            6
-47       5            7
-48       5            8
-49       5            9
-50       5           10
-51       6            1
-52       6            2
-53       6            3
-54       6            4
-55       6            5
-56       6            6
-57       6            7
-58       6            8
-59       6            9
-60       6           10
-61       7            1
-62       7            2
-63       7            3
-64       7            4
-65       7            5
-66       7            6
-67       7            7
-68       7            8
-69       7            9
-70       7           10
-71       8            1
-72       8            2
-73       8            3
-74       8            4
-75       8            5
-76       8            6
-77       8            7
-78       8            8
-79       8            9
-80       8           10
-81       9            1
-82       9            2
-83       9            3
-84       9            4
-85       9            5
-86       9            6
-87       9            7
-88       9            8
-89       9            9
-90       9           10
-91      10            1
-92      10            2
-93      10            3
-94      10            4
-95      10            5
-96      10            6
-97      10            7
-98      10            8
-99      10            9
-100     10           10
-101     11            1
-102     11            2
-103     11            3
-104     11            4
-105     11            5
-106     11            6
-107     11            7
-108     11            8
-109     11            9
-110     11           10
-111     12            1
-112     12            2
-113     12            3
-114     12            4
-115     12            5
-116     12            6
-117     12            7
-118     12            8
-119     12            9
-120     12           10
-121     13            1
-122     13            2
-123     13            3
-124     13            4
-125     13            5
-126     13            6
-127     13            7
-128     13            8
-129     13            9
-130     13           10
-131     14            1
-132     14            2
-133     14            3
-134     14            4
-135     14            5
-136     14            6
-137     14            7
-138     14            8
-139     14            9
-140     14           10
-141     15            1
-142     15            2
-143     15            3
-144     15            4
-145     15            5
-146     15            6
-147     15            7
-148     15            8
-149     15            9
-150     15           10
-151     16            1
-152     16            2
-153     16            3
-154     16            4
-155     16            5
-156     16            6
-157     16            7
-158     16            8
-159     16            9
-160     16           10
-161     17            1
-162     17            2
-163     17            3
-164     17            4
-165     17            5
-166     17            6
-167     17            7
-168     17            8
-169     17            9
-170     17           10
-171     18            1
-172     18            2
-173     18            3
-174     18            4
-175     18            5
-176     18            6
-177     18            7
-178     18            8
-179     18            9
-180     18           10
-181     19            1
-182     19            2
-183     19            3
-184     19            4
-185     19            5
-186     19            6
-187     19            7
-188     19            8
-189     19            9
-190     19           10
-191     20            1
-192     20            2
-193     20            3
-194     20            4
-195     20            5
-196     20            6
-197     20            7
-198     20            8
-199     20            9
-200     20           10
-201     21            1
-202     21            2
-203     21            3
-204     21            4
-205     21            5
-206     21            6
-207     21            7
-208     21            8
-209     21            9
-210     21           10
-                                                         sauce_name scoville
-1                                     Texas Pete Original Hot Sauce      747
-2                                        Cholula Original Hot Sauce     3600
-3                  El Yucateco Caribbean Hot Sauce – Chile Habanero     5790
-4             Lottie's Traditional Barbados Yellow Hot Pepper Sauce    12000
-5                                    Pain is Good – Louisiana Style    13000
-6                                                         Pain 100%    20600
-7                        Blair's Original Death Sauce with Chipotle    30000
-8                                 Dave's Gourmet Temporary Insanity    57000
-9                                 Dave's Gourmet Insanity Hot Sauce   180000
-10                                                      Mad Dog 357   357000
-11                                                         Sriracha     2200
-12                                                          Tapatío     3000
-13                                     El Yucateco – Chile Habanero     5790
-14                                   Pain is Good – Louisiana Style    13000
-15                                        Hot Ones – Fiery Chipotle    15600
-16                                               High River – Rogue    34000
-17                                                        Pain 100%    40600
-18                                       Da' Bomb – Beyond Insanity   135600
-19                                                      Mad Dog 357   357000
-20                                         Blair's Mega Death Sauce   550000
-21                                                Huy Fong Sriracha     2200
-22                                                          Tabasco     4000
-23                                       El Yucateco Chile Habanero     5790
-24                    Queen Majesty – Red Habanero and Black Coffee    14000
-25                                        Hot Ones – Fiery Chipotle    15600
-26               Bravado Spice Company – Ghost Pepper and Blueberry    28000
-27                     Torchbearer Sauces – Zombie Apocalypse Sauce   100000
-28                                       Da' Bomb – Beyond Insanity   135600
-29                                                      Mad Dog 357   357000
-30                                         Blair's Mega Death Sauce   550000
-31                                            Valentina Black Label     2100
-32                                                          Crystal     3000
-33                                                  Secret Aardvark     5000
-34                         Queen Majesty – Scotch Bonnet and Ginger     9000
-35                                        Hot Ones – Fiery Chipotle    15600
-36                                                      Dirty Dicks    21000
-37                              Zombie Apocalypse Ghost Chili Sauce   100000
-38                                       Da' Bomb – Beyond Insanity   135600
-39                                         Blair's Mega Death Sauce   550000
-40                                                     The Last Dab  2000000
-41                                      Humble House Ancho &amp; Morita      450
-42                                     Original Louisiana Hot Sauce      550
-43              Small Axe Peppers – The Bronx Greenmarket Hot Sauce     5500
-44                                        Hot Ones – Fiery Chipotle    15600
-45  Adoboloco Hawaiian Hot Sauce Hamajang Kiawe Smoked Ghost Pepper    32000
-46                                        Karma Sauce Extreme Karma    56000
-47                                      Dawson's Original Hot Sauce    82000
-48                                       Da' Bomb – Beyond Insanity   135600
-49                           Mad Dog 357 – 25th Anniversary Edition  1000000
-50                         Hot Ones – The Last Dab (Reaper Edition)  2000000
-51                                         Howler Monkey – Original      600
-52                               Heartbeat Hot Sauce – Red Habanero     4000
-53                                  Pirate's Lantern – Pepper Sauce     7500
-54                                      Son of Zombie – Torchbearer    24000
-55                                         Hot Ones – Los Calientes    36000
-56       Bravado Spice Company – Black Garlic Carolina Reaper Sauce    71000
-57                                           Bunsters – Black Label    99000
-58                                       Da' Bomb – Beyond Insanity   135600
-59                                 Hell Fire Hot Sauce – Fiery Fool   550000
-60                                   Hot Ones – The Last Dab Reduxx  2000000
-61                                           Hot Ones – The Classic     1800
-62                             Humble House Guajillo &amp; Red Jalapeño     2100
-63            Butterfly Bakery of Vermont – Maple Wood Smoked Onion     7900
-64                               Small Axe Peppers – Habanero Mango    22500
-65                                         Hot Ones – Los Calientes    36000
-66                                        Clark and Hopkins – Assam    55000
-67                                            Culley's – Fire Water   112000
-68                                       Da' Bomb – Beyond Insanity   135600
-69                                       Burns &amp; McCoy – Exhorresco   625000
-70                                   Hot Ones – The Last Dab Reduxx  2000000
-71                                           Hot Ones – The Classic     1800
-72                                   Angry Goat – Hippy Dippy Green     2300
-73                                                 Paddy O's Potion     8800
-74                                    High River Sauces Cheeba Gold    25300
-75                                         Hot Ones – Los Calientes    36000
-76                                             Adoboloco Kolohe Kid    61000
-77                                      Torchbearer – Garlic Reaper   116000
-78                                       Da' Bomb – Beyond Insanity   135600
-79                                             Hellfire – Fear This   679000
-80                                  Hot Ones – The Last Dab: Reduxx  2000000
-81                                           Hot Ones – The Classic     1800
-82                                        Sauce Bae Skinny Habanero     2500
-83                                           Shaquanda's Hot Pepper    10100
-84                   Lucky Dog Year of The Dog Thai Chile Pineapple    29800
-85                                         Hot Ones – Los Calientes    36000
-86                                       Hell Fire Detroit Habanero    66000
-87                          Wiltshire Chilli Farm Trinidad Scorpion   104000
-88                                       Da' Bomb – Beyond Insanity   135600
-89                                      Puckerbutt Chocolate Plague   690000
-90                                   Hot Ones – The Last Dab Reduxx  2000000
-91                                           Hot Ones – The Classic     1800
-92       Small Axe Peppers – The Chicago Red Hot Jalapeño Hot Sauce     2800
-93                         Heartbeat Hot Sauce – Pineapple Habanero    12200
-94                                         Hot Ones – Los Calientes    36000
-95                                 Torchbearer Headless Horseradish    52000
-96                                             Adoboloco Fiya!Fiya!    77000
-97                    Bravado Spice Company – Aka Miso Ghost Reaper   116000
-98                                       Da' Bomb – Beyond Insanity   135600
-99                                  Karma Sauce – Burn After Eating   669000
-100                                     Hot Ones – The Last Dab XXX  2000000
-101                                          Hot Ones – The Classic     1800
-102                                     Cantina Royal – Tamaulipeka     4200
-103                       Fiji Fire – Native Bongo Chilli Hot Sauce    14300
-104                   Double Take Salsa Co. – Scotch Bonnet Mustard    37000
-105                                   Hot Ones – Los Calientes Rojo    49000
-106                                     Seed Ranch – Hot Thai Green    74000
-107                                        Pepper North – Stargazer   118000
-108                                      Da' Bomb – Beyond Insanity   135600
-109                                   Dingo Sauce Co. – Widow Maker   682000
-110                                     Hot Ones – The Last Dab XXX  2000000
-111                  Hot Ones – The Classic (Garlic Fresno Edition)     1700
-112                               Steel City Sauce Co – Jade Jaguar     3600
-113                           Fresco Sauce Co – Chipotle &amp; Habanero    12400
-114                                    Hotter Than El – Ghost Sauce    39000
-115                                   Hot Ones – Los Calientes Rojo    49000
-116                                        Seafire Gourmet – Reaper    72000
-117                               Volcanic Pepper's – Thor's Hammer   121000
-118                                      Da' Bomb – Beyond Insanity   135600
-119                                         Monoloco – Pierde Almas   665000
-120                                     Hot Ones – The Last Dab XXX  2000000
-121                  Hot Ones – The Classic (Garlic Fresno Edition)     1700
-122                                       Dawson's – Shawarma Sauce     4200
-123                                 Shaquanda's – West Indian Curry    14000
-124                          Angry Goat Pepper Company – Goat Rider    43500
-125                                   Hot Ones – Los Calientes Rojo    49000
-126                          Heartbeat Hot Sauce Company – Scorpion    66000
-127                      Hell Fire Detroit – Bourbon Habanero Ghost    89000
-128                                      Da' Bomb – Beyond Insanity   135600
-129                    PuckerButt Pepper Company – Chipotle eXpress   669000
-130                                 Hot Ones – The Last Dab: Apollo  2000000
-131                                          Hot Ones – The Classic     1800
-132                              Hot N Saucy – Garlic N Peperoncini     3900
-133                                         Mark's – Barbados Style    15500
-134                                        Hellfire – Devil's Blend    42000
-135                                   Hot Ones – Los Calientes Rojo    49000
-136            High River Sauces – Tears of the Sun Private Reserve    69000
-137                               Torchbearer Sauces – Honey Badger    99000
-138                                      Da' Bomb – Beyond Insanity   135600
-139                                  Hot Ones – Eye of the Scorpion   676000
-140                                 Hot Ones – The Last Dab: Apollo  2000000
-141                                          Hot Ones – The Classic     1800
-142                                         Savir Foods – Jala Pepa     4000
-143                                          Cantina Royal – Tomasa    18000
-144                     Hot Ones – Los Calientes Barbacoa Hot Sauce    33000
-145                                 The Original Goat – Ginger Goat    55000
-146                         High Desert Sauce Co. – Tikk-Hot Masala    72000
-147                                     Hotter Than El – Love Burns   101000
-148                                      Da' Bomb – Beyond Insanity   135600
-149                                    Karma Sauce – Scorpion Disco   649000
-150                                 Hot Ones – The Last Dab: Apollo  2000000
-151                  Hot Ones – The Classic (Garlic Fresno Edition)     1700
-152                              Yellowbird Foods – Bliss &amp; Vinegar     6200
-153                               Hoff &amp; Pepper – Hoff's Haus Sauce    14500
-154                                        Hot Ones – Los Calientes    36000
-155                    Hot Heads Official – Revolutionary Hot Sauce    57000
-156                                  Señor Lechuga – .718 Hot Sauce    67000
-157                  Chile Lengua de Fuego – Bhutila Fire Hot Sauce   118000
-158                                      Da' Bomb – Beyond Insanity   135600
-159                                    Hellfire – Kranked Hot Sauce   699000
-160                                 Hot Ones – The Last Dab: Apollo  2000000
-161                                          Hot Ones – The Classic     1800
-162                        Dawson's Hot Sauce – Cedar Smoked Garlic     7000
-163                            Clark + Hopkins – Calabria Hot Sauce    15700
-164                             Angry Goat Pepper Co. – The Phoenix    39000
-165                                   Hot Ones – Los Calientes Rojo    49000
-166                           Queen Majesty – Cocoa Ghost Hot Sauce    71000
-167                              13 Angry Scorpions – Jekyll &amp; Hyde   109000
-168                                      Da' Bomb – Beyond Insanity   135600
-169          Puckerbutt Pepper Company – Extra Mean Green Hot Sauce   702000
-170                                 Hot Ones – The Last Dab: Apollo  2000000
-171                   Hot Ones -The Classic (Garlic Fresno Edition)     1800
-172                                        Adoboloco – Island Wings     5500
-173                     Burns &amp; McCoy – Mezcaline Oaxacan Hot Sauce    16600
-174                                  Hot Ones – Los Calientes Verde    36000
-175                              Sauce Leopard – The Seventh Reaper    59000
-176                                  Hot N Saucy – Collards N Ghost    70000
-177                              Halogi Hot Sauce – Tyrfing's Curse    99000
-178                                      Da' Bomb – Beyond Insanity   135600
-179                              Dingo Sauce Co. – Psycho Hot Sauce   666000
-180                                 Hot Ones – The Last Dab: Apollo  2000000
-181                    Hot Ones – The Classic (Chili Maple Edition)     1600
-182                                     Sinai Gourmet – Tropiquanté     4000
-183                          Microsaucerie Piko Peppers – Piko Riko    15500
-184                     Hot Ones – Los Calientes Barbacoa Hot Sauce    33000
-185                                      Fly By Jing – Sichuan Gold    46000
-186                           Chili Lengua de Fuego – Turmeric Bomb    69000
-187                                      Karma Sauce – Cosmic Disco   103000
-188                                      Da' Bomb – Beyond Insanity   135600
-189                         Puckerbutt Pepper Co. – Unique Garlique   642000
-190                                 Hot Ones – The Last Dab: Apollo  2000000
-191                    Hot Ones – The Classic (Chili Maple Edition)     1600
-192                                      Shaquanda's – Banjee Ranch     6200
-193                                                  Donis – Cadejo    15000
-194                        Hot Ones – Los Calientes Verde Hot Sauce    36000
-195                      Brooklyn Delhi – Bhut Jolokia Ghost Pepper    39000
-196                            Torchbearer Sauces – Mushroom Mayhem    68000
-197            Angry Goat Pepper – Dream of Calypso Private Reserve   101000
-198                                      Da' Bomb – Beyond Insanity   135600
-199                              Butterfly Bakery – Taco Vibes Only   638000
-200                                 Hot Ones – The Last Dab: Apollo  2000000
-201                    Hot Ones – The Classic (Chili Maple Edition)     1600
-202                                    La Pimenterie – Curry Vierde     6000
-203                           The Crabby Shack – Zesty Lemon Pepper    15500
-204                            Chili Lengua de Fuego – Chicho-Ghost    36500
-205                         Hot Ones – Los Calientes Rojo Hot Sauce    49000
-206                                    The Spicy Shark – Mako Snake    71000
-207                                        Adoboloco Jalapeño Chico   103000
-208                                      Da' Bomb – Beyond Insanity   135600
-209                              Alchemy Peppers – Watermelon Ghost   641000
-210                                 Hot Ones – The Last Dab: Apollo  2000000</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rep_sauces<span class="ot">&lt;-</span>sauces<span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sauce_name)<span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count=</span><span class="fu">n</span>(), <span class="at">firstapp=</span><span class="fu">min</span>(season))<span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count<span class="sc">&gt;</span><span class="dv">1</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#getting the frequency of repetitions of sauces</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>uniq<span class="ot">&lt;-</span>sauces<span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sauce_name)<span class="sc">|&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">c=</span><span class="fu">n</span>(), <span class="at">firstapp=</span><span class="fu">min</span>(season))<span class="sc">|&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(c<span class="sc">&gt;</span><span class="dv">1</span>)<span class="sc">|&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(firstapp)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>rep_sauces<span class="sc">|&gt;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>season, <span class="at">y=</span><span class="fu">reorder</span>(sauce_name,firstapp),<span class="at">color=</span>scoville))<span class="sc">+</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#added the color scale</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low=</span><span class="st">"orange"</span>,<span class="at">high=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>))<span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="co">#adding the frequency of each sauce</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>,<span class="at">x=</span><span class="dv">22</span>,<span class="at">y=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,<span class="at">label=</span>uniq<span class="sc">$</span>c)<span class="sc">+</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">#text labeling</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>,<span class="at">x=</span><span class="dv">23</span>,<span class="at">y=</span><span class="dv">8</span>,<span class="at">label=</span><span class="st">"Repetition Rate of Sauces"</span>,<span class="at">angle=</span><span class="st">"270"</span>)<span class="sc">+</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">#removing grids and adjusting the sauce name's size on x-axis</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">8</span>),</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Season"</span>,<span class="at">y=</span><span class="st">"Sauce Name"</span>,<span class="at">title=</span><span class="st">"Occurrences of Repeated Sauces"</span>)<span class="sc">+</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rep_sauces<span class="ot">&lt;-</span>sauces<span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sauce_name)<span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count=</span><span class="fu">n</span>(), <span class="at">firstapp=</span><span class="fu">min</span>(season))<span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count<span class="sc">&gt;</span><span class="dv">1</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#getting the frequency of repetitions of sauces</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>uniq<span class="ot">&lt;-</span>sauces<span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sauce_name)<span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">c=</span><span class="fu">n</span>(), <span class="at">firstapp=</span><span class="fu">min</span>(season))<span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(c<span class="sc">&gt;</span><span class="dv">1</span>)<span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(firstapp)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>rep_sauces<span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>season, <span class="at">y=</span><span class="fu">reorder</span>(sauce_name,firstapp),<span class="at">color=</span>scoville))<span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#added the color scale</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low=</span><span class="st">"orange"</span>,<span class="at">high=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>))<span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">#adding the frequency of each sauce</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>,<span class="at">x=</span><span class="dv">22</span>,<span class="at">y=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,<span class="at">label=</span>uniq<span class="sc">$</span>c)<span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">#text labeling</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>,<span class="at">x=</span><span class="dv">24</span>,<span class="at">y=</span><span class="dv">8</span>,<span class="at">label=</span><span class="st">"Repetition Rate of Sauces"</span>,<span class="at">angle=</span><span class="st">"270"</span>)<span class="sc">+</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Season"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Sauce Name"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"Occurrences of Repeated Sauces"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="st">"Source: TidyTuesday"</span>)<span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">#removing grids and adjusting the sauce name's size on x-axis</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x=</span><span class="fu">element_blank</span>()</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="960"></p>
 </div>
-</div>
-</section>
-<section id="plot" class="level3">
-<h3 class="anchored" data-anchor-id="plot">Plot:</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/plot-2.png" class="img-fluid figure-img"></p>
-</figure>
 </div>
 </section>
 </section>

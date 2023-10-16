@@ -20,7 +20,7 @@ website:
       - text: About
         href: about.qmd
     logo: images/logo.png
-    favicon:  images/logo.png
+  favicon: images/logo.png
 
 format:
   html:

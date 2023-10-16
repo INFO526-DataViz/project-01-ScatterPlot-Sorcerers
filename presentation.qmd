@@ -7,6 +7,7 @@ title-slide-attributes:
   data-background-size: stretch
   data-background-opacity: "0.4"
   data-slide-number: none
+
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
@@ -17,6 +18,8 @@ editor: visual
 execute:
   echo: false
   warning: false
+  
+logo: images/logo.png
 ---
 
 ```{r}
@@ -77,9 +80,17 @@ seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 ```
 ## Scoville Scale {transition="concave-in slide-out"}
 
-*Well we all know guns right ?*
+::: columns
+::: {.column width="60%"}
+Well we all know guns right ?
 
 ![](images/Sauces(img_transparent).png){fig-alt="sauces and program explained" fig-align="center" width="100%"}
+:::
+
+::: {.column width="40%"}
+![](images/scoville.gif){fig-align="right"}
+:::
+:::
 
 ## What this Data set is ABOUT? {transition="zoom-in fade-out"}
 
@@ -235,6 +246,19 @@ uniq<-sauces|>
 ```
 
 ```{r, fig.width=10, fig.height=5}
+#data cleaning
+sauces$sauce_name<-ifelse(sauces$sauce_name=="Da' Bomb Beyond Insanity","Da' Bomb – Beyond Insanity",sauces$sauce_name)
+rep_sauces<-sauces|>
+  group_by(sauce_name)|>
+  mutate(count=n(), firstapp=min(season))|>
+  filter(count>1)
+#getting the frequency of repetitions of sauces
+uniq<-sauces|>
+  group_by(sauce_name)|>
+  summarize(c=n(), firstapp=min(season))|>
+  filter(c>1)|>
+  arrange(firstapp)
+
 rep_sauces|>
 ggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+
   geom_line(linewidth=2)+
@@ -245,14 +269,19 @@ ggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+
   annotate("text",x=22,y=1:15,label=uniq$c)+
   #text labeling
   annotate("text",x=24,y=8,label="Repetition Rate of Sauces",angle="270")+
+  theme_minimal()+
+  labs(x="Season",
+       y="Sauce Name",
+       title="Occurrences of Repeated Sauces",
+       caption="Source: TidyTuesday")+
   #removing grids and adjusting the sauce name's size on x-axis
   theme(
-    panel.background = element_rect(fill = "white"),
     axis.text.y=element_text(size=10),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.x=element_blank()
-  )+
-  labs(x="Season",y="Sauce Name",title="Occurrences of Repeated Sauces")
+  )
 ```
 
 ## Thank You {.center}
+
+![](images/HotOnes_Opening_GIF.gif){fig-align="center"}
