@@ -36,19 +36,19 @@ Looking at the data set, the first thing that we were interested in finding out 
 
 ## Approach
 
+**Histogram:**
 
-Histogram:
 Purpose: Visualizing the distribution and trend followed by the number of contestants that failed to try all the sauces over the seasons.
 
-Geom_smooth:
+**Geom_smooth:**
+
 Purpose: Visualizing the trend followed by the average scoville score across the seasons.
 
 First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinished_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator.
 
-Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot. 
+Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.
 
 ## Analysis
-
 
 First, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinshed_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator. Since the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot.
 
@@ -63,10 +63,10 @@ library(dplyr)
 library(scales)
 library(ggplot2)
 
-# Reading the data
-episodes <- read.csv('data/episodes.csv')
-sauces <- read.csv('data/sauces.csv')
-seasons <- read.csv('data/seasons.csv')
+# Loading Data
+episodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')
+sauces <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')
+seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
 
 
 #Creating the data frame with mean scoville score of each season
@@ -89,7 +89,8 @@ formatted_labels <- number_format(scale = 0.001, accuracy = 1, suffix = "K")(c(0
 plt <- ggplot() +
   geom_histogram(data = unfinished_df, aes(x = season), fill = "orange", binwidth = 1) +
   theme_minimal() +
-  theme(axis.text.y = element_text(color = "orange"), axis.title.y = element_text(color = "orange"))
+  theme(axis.text.y = element_text(color = "orange"), 
+        axis.title.y = element_text(color = "orange"))
 
 # Modify the scale_y_continuous function to set the limits for both axes
 plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
@@ -149,10 +150,9 @@ Text annotations can be added to the plot to show the exact count of repetitions
 
 ### Code
 
-```{r}
+```{r, fig.width=10, fig.height=5}
 #data cleaning
 sauces$sauce_name<-ifelse(sauces$sauce_name=="Da' Bomb Beyond Insanity","Da' Bomb – Beyond Insanity",sauces$sauce_name)
-sauces
 rep_sauces<-sauces|>
   group_by(sauce_name)|>
   mutate(count=n(), firstapp=min(season))|>
@@ -173,20 +173,19 @@ ggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+
   #adding the frequency of each sauce
   annotate("text",x=22,y=1:15,label=uniq$c)+
   #text labeling
-  annotate("text",x=23,y=8,label="Repetition Rate of Sauces",angle="270")+
+  annotate("text",x=24,y=8,label="Repetition Rate of Sauces",angle="270")+
+  theme_minimal()+
+  labs(x="Season",
+       y="Sauce Name",
+       title="Occurrences of Repeated Sauces",
+       caption="Source: TidyTuesday")+
   #removing grids and adjusting the sauce name's size on x-axis
   theme(
-    axis.text.y=element_text(size=8),
+    axis.text.y=element_text(size=10),
     panel.grid.major.y = element_blank(),
-    panel.grid.minor.x=element_blank(),
-  )+
-  labs(x="Season",y="Sauce Name",title="Occurrences of Repeated Sauces")+
-  theme_minimal()
+    panel.grid.minor.x=element_blank()
+  )
 ```
-
-### Plot:
-
-![](images/plot-2.png){fig-align="\"center"}
 
 ## Discussions:
 
