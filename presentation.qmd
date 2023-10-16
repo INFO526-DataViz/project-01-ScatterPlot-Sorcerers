@@ -133,7 +133,7 @@ More than just a hot wing challenge
 
 ## Question-1 {.center auto-animate="true"}
 
-Failure to finish the sauces in relation to scoville score ?
+Does the scoville score have any effect on the number of people that fail to try all the sauces?
 
 ## Question-1 {auto-animate="true"}
 
