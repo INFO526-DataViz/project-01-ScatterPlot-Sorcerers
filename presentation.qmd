@@ -139,10 +139,58 @@ model |> glance()
 ## Plots
 
 ```{r}
-penguins |>
-  mutate(species = ifelse(species == "Adelie", "Adelie", "Other")) |>
-  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
-  geom_point()
+# Importing the required libraries
+library(readr)
+library(dplyr)
+library(scales)
+library(ggplot2)
+
+# Reading the data
+episodes <- read.csv('data/episodes.csv')
+sauces <- read.csv('data/sauces.csv')
+seasons <- read.csv('data/seasons.csv')
+
+
+#Creating the data frame with mean scoville score of each season
+scoville_scores <- sauces %>%
+  group_by(season) %>%
+  summarize(avg_scoville = mean(scoville, na.rm = TRUE))
+
+# Filtering the columns with unfinished contestants
+unfinished_df <- episodes[episodes$finished == FALSE, ]
+
+max_avg_scoville <- max(scoville_scores$avg_scoville)
+scale_factor <- 3 / max_avg_scoville
+
+# Function to 
+map_y2 <- function(y) y * scale_factor
+
+# Pre-format the labels for the right y-axis using scales::number_format
+formatted_labels <- number_format(scale = 0.001, accuracy = 1, suffix = "K")(c(0.00, 0.75, 1.50, 2.25, 3.00) / scale_factor)
+
+plt <- ggplot() +
+  geom_histogram(data = unfinished_df, aes(x = season), fill = "orange", binwidth = 1) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(color = "orange"), axis.title.y = element_text(color = "orange"))
+
+# Modify the scale_y_continuous function to set the limits for both axes
+plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
+  geom_smooth(data = scoville_scores, aes(season, map_y2(avg_scoville)), se = FALSE, color = "red") +
+  labs(x = "Season",
+       y = "Number of Unfinished contestants",
+       title = "Average Scoville Score vs Number of Unfinished Contestants",
+       subtitle = "by Season",
+       caption = "Source: Tidytuesday") +
+  theme(axis.text.y.right = element_text(color = "red"), axis.title.y.right = element_text(color = "red")) +
+  scale_y_continuous(
+    limits = c(0, 3),  # Set limits for the left y-axis
+    sec.axis = sec_axis(
+      trans = ~ . / scale_factor,
+      name = "Average Scoville Score",
+      breaks = seq(0, max_avg_scoville, by = max_avg_scoville / 4),
+      labels = formatted_labels
+    ) # Set breaks and labels for the right y-axis
+  )
 ```
 
 ## Plot and text
