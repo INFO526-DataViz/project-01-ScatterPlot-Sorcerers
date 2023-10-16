@@ -185,19 +185,20 @@ map_y2 <- function(y) y * scale_factor
 formatted_labels <- number_format(scale = 0.001, accuracy = 1, suffix = "K")(c(0.00, 0.75, 1.50, 2.25, 3.00) / scale_factor)
 
 plt <- ggplot() +
-  geom_histogram(data = unfinished_df, aes(x = season), fill = "#4DBDC7", binwidth = 1) +
+  geom_histogram(data = unfinished_df, aes(x = season), fill = "orange", binwidth = 1) +
   theme_minimal() +
-  theme(axis.text.y = element_text(color = "#4DBDC7"), axis.title.y = element_text(color = "#4DBDC7"))
+  theme(axis.text.y = element_text(color = "orange"), 
+        axis.title.y = element_text(color = "orange"))
 
 # Modify the scale_y_continuous function to set the limits for both axes
 plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
-  geom_smooth(data = scoville_scores, aes(season, map_y2(avg_scoville)), se = FALSE, color = "#EE70F2") +
+  geom_smooth(data = scoville_scores, aes(season, map_y2(avg_scoville)), se = FALSE, color = "red") +
   labs(x = "Season",
        y = "Number of Unfinished contestants",
        title = "Average Scoville Score vs Number of Unfinished Contestants",
        subtitle = "by Season",
        caption = "Source: Tidytuesday") +
-  theme(axis.text.y.right = element_text(color = "#EE70F2"), axis.title.y.right = element_text(color = "#EE70F2")) +
+  theme(axis.text.y.right = element_text(color = "red"), axis.title.y.right = element_text(color = "red")) +
   scale_y_continuous(
     limits = c(0, 3),  # Set limits for the left y-axis
     sec.axis = sec_axis(
