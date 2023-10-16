@@ -16,6 +16,7 @@ format:
 editor: visual
 execute:
   echo: false
+  warning: false
 ---
 
 ```{r}
