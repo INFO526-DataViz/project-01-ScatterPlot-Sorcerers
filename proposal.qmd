@@ -41,7 +41,7 @@ Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data 
     b.  The fields and the explanation of the episode data set are as follows
 
     | Variable Name           | Description                                                       |
-    |-------------------------|-------------------------------------------------------------------|
+    |--------------------|----------------------------------------------------|
     | season                  | The season number.                                                |
     | episode_overall         | The overall count of episode, from 1-300                          |
     | episode_season          | The count of this episode within this season                      |
@@ -60,7 +60,7 @@ Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data 
     c.  The variables used and the interpretation of the data table is as follows
 
     | Variable Name | Description                                                  |
-    |---------------|--------------------------------------------------------------|
+    |-----------------|-------------------------------------------------------|
     | season        | The season number                                            |
     | sauce_number  | The number of this sauce, from 1 (least hot) to 10 (hottest) |
     | sauce_name    | The name of the sauce                                        |
@@ -74,7 +74,7 @@ Hot Ones Episodes is a data set comes from the TidyTuesday repository. The Data 
     b.  The variables used and their descriptions are as follows
 
     | Variable Name    | Description                                                                                     |
-    |------------------|-------------------------------------------------------------------------------------------------|
+    |----------------|--------------------------------------------------------|
     | season           | The season number                                                                               |
     | episodes         | The count of episodes in this season                                                            |
     | note             | Notes about this season                                                                         |
@@ -91,10 +91,10 @@ The dataset represents an intriguing and distinctive topic. It is neither too sm
 
 Q1 ) How does the average scoville score of the season affect the number of guests who did not finish trying all the sauces?
 
-Q2 ) How does the scoville scale of the sauces used in "Hot Ones" episodes change over different seasons?
+Q2 ) Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?
 
 ## Analysis plan
 
 -   For the first question, we plan on creating the variable "unfinished_count" which represents the number of guests that failed to try all the sauces for each season. Then we create another variable "average_scoville" which is the average of the variable "scoville" for each season. Then we can make a scatter plot in the first layer with "average_scoville" on the x-axis and "unfinished_count" on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the "unfinished_count" variable from "episodes.csv" and the "average_scoville" variable from "sauces.csv". We are planning to find out the season which has the most unfinished contestants and analyse the sauce score for that. This way, we will be able to tell if the average scoville score have any impact on the number of contestants that failed to try all the sauces.
 
--   For the second question, we plan on extracting the average scoville scale data of the sauces that appeared in each of the seasons, for all of the seasons, and draw box plots (or violin plot.). We will compare compare it to a bar plot which represents the entire length of the season as the seasons length (number of episodes) were not the same for each season. By doing this we will see if seasons that had a higher average number of scoville scale data had shorter seasons (number of episodes), and seasons with a lower overall average scoville scale number had more episodes within a season.
+-   For the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a line chart to visualize which season has more number of repetitive sauces. In other words, this will show the sauces that were used multiple times throughout the seasons. We want to do this because every season they change most of the lineup of hot sauces used and we would like to see which hot sauces remained in use in multiple seasons. By doing this, we can see if the scoville of the hot sauces reused was higher or lower than the average scoville of the season.
