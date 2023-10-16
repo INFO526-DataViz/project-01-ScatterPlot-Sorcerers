@@ -1,7 +1,7 @@
 ---
 name: Reproducibility, style, and organization feedback
 about: Instructor review of project Reproducibility, style, and organization
-title: Reproducibility feedback
+title: Reproducibility, style, and organization feedback
 labels: ''
 assignees: ''
 ---
