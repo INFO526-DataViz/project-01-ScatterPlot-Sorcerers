@@ -68,7 +68,6 @@ seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 ```{=html}
 <pre style="text-align:center; font-size:50px"><strong>Eat to feel the Heat</strong></pre>
 ```
-
 ## So what is The Hot Ones ? {auto-animate="true"}
 
 ![](images/Transition.png){fig-alt="sauces and program explained" fig-align="center" width="100%"}
@@ -137,6 +136,7 @@ More than just a hot wing challenge
 Failure to finish the sauces in relation to scoville score ?
 
 ## Question-1 {auto-animate="true"}
+
 The Plot
 
 ```{r, echo=FALSE}
@@ -196,13 +196,12 @@ plt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +
 
 ```
 
-
-
-## Question-2{.center data-transition="concave-in convex-out" auto-animate="true"}
+## Question-2 {.center data-transition="concave-in convex-out" auto-animate="true"}
 
 Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?
 
-## Question-2{.center data-transition="concave-in convex-out" auto-animate="true"}
+## Question-2 {.center data-transition="concave-in convex-out" auto-animate="true"}
+
 The Plot
 
 ```{r, echo=FALSE}
@@ -219,8 +218,6 @@ uniq<-sauces|>
   filter(c>1)|>
   arrange(firstapp)
 ```
-
-
 
 ```{r, fig.width=10, fig.height=5}
 rep_sauces|>
@@ -243,7 +240,6 @@ ggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+
   labs(x="Season",y="Sauce Name",title="Occurrences of Repeated Sauces")
 ```
 
-
 ## Math Expressions {.smaller}
 
 You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
@@ -262,6 +258,4 @@ Limitations:
 
 2.  There should not be spaces after the opening `$` or before the closing `$`.
 
-
 ## Thank You {.center}
-
