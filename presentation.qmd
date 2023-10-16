@@ -10,6 +10,8 @@ title-slide-attributes:
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
+    transition: convex
+    background-transition: concave
   
 editor: visual
 execute:
@@ -52,24 +54,22 @@ mtcars$speed <- mtcars$hp / mtcars$wt
 data("penguins")
 ```
 
-::: {style="margin-top:0px;"}
-## So what is the Hot ones ?
+##  {auto-animate="true"}
 
-Eat and feel the heat
+### So what is the Hot ones ? {transition="concave-in slide-out"}
 
-![](images/Untitled-removebg-preview.png){fig-align="center" width="488"}
+![](images/Untitled-removebg-preview.png){fig-align="center"}
+
+##  {auto-animate="true"}
+
+### So what is the Hot ones ? {transition="concave-in slide-out"}
+
+![](images/intro-1556638929.jpg)
 
 ```{=html}
-<pre style="margin-top:0px; margin-bottom:50px"><center>Mild                                    Wild</center></pre>
+<pre style="font-size:100%"><b>Eat and feel the heat</b></pre>
 ```
-<div>
-
-![](images/intro-1556638929.jpg){fig-align="center" width="321" height="203"}
-
-</div>
-:::
-
-## Scoville Scale
+## Scoville Scale {transition="convax-in slide-out"}
 
 *Well we all know guns right ?*
 
