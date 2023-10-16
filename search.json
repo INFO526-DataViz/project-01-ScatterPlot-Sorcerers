@@ -1,89 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by ScatterPlot Sorcerers. For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: Thanoosha Naidu Karri, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 4: Antonio Escalante Jr., is a 1st year graduate student in the Data Science program with the School of Information."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "From Mild to Wild",
-    "section": "",
-    "text": "Add project abstract here."
-  },
-  {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
-    "title": "From Mild to Wild",
-    "section": "",
-    "text": "Add project abstract here."
-  },
-  {
-    "objectID": "presentation.html#quarto",
-    "href": "presentation.html#quarto",
-    "title": "From Mild to Wild",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
-  },
-  {
-    "objectID": "presentation.html#layouts",
-    "href": "presentation.html#layouts",
-    "title": "From Mild to Wild",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
-  },
-  {
-    "objectID": "presentation.html#code",
-    "href": "presentation.html#code",
-    "title": "From Mild to Wild",
-    "section": "Code",
-    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
-  },
-  {
-    "objectID": "presentation.html#plots",
-    "href": "presentation.html#plots",
-    "title": "From Mild to Wild",
-    "section": "Plots",
-    "text": "Plots\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`)."
-  },
-  {
-    "objectID": "presentation.html#plot-and-text",
-    "href": "presentation.html#plot-and-text",
-    "title": "From Mild to Wild",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
-  },
-  {
-    "objectID": "presentation.html#tables",
-    "href": "presentation.html#tables",
-    "title": "From Mild to Wild",
-    "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
-  },
-  {
-    "objectID": "presentation.html#images",
-    "href": "presentation.html#images",
-    "title": "From Mild to Wild",
-    "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
-  },
-  {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
-    "title": "From Mild to Wild",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
-    "title": "From Mild to Wild",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
-  },
-  {
     "objectID": "proposal.html",
     "href": "proposal.html",
     "title": "Hot Ones Episodes",
@@ -95,20 +11,160 @@
     "href": "proposal.html#dataset",
     "title": "Hot Ones Episodes",
     "section": "Dataset",
-    "text": "Dataset\n\nepisodes &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')\nsauces &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')\nseasons &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')\n\nA brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.\nMake sure to load the data and use inline code for some of this information.\nThe reason we chose this specific dataset is because a couple of us in the group have seen the show and thought it would be fun. It also seems like it would be engaging to present for the rest of the class."
+    "text": "Dataset\n\nepisodes &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')\nsauces &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')\nseasons &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')\n\n\nDataset Name - Hot Ones Episodes\nHot Ones is a popular YouTube series which was started on 12th March 2015. The concept behind the show was to serve the guests with hot sauces which have varying heat and spiciness numbers on the scoville scale. The show often features rare and unique hot sauces from around the world, the spiciness of these sauces is measured by the scoville scale.\nBest Last Dab Reactions of All Time Video - In case you are unfamiliar with the show Hot Ones\nhttps://youtu.be/-at3oShfXH8?si=iYmT2YOsBiBPwFap\nHot Ones Episodes is a data set comes from the TidyTuesday repository. The Data Set that we choose contains three tables or three sets of data.\n\nThe first datset gives detailed information about the episodes\n\nIt contains the data about each episode until July 2023. The data set contains 300 observations.\nThe fields and the explanation of the episode data set are as follows\n\n\nepisodes.csv\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nseason\nThe season number.\n\n\nepisode_overall\nThe overall count of episode, from 1-300\n\n\nepisode_season\nThe count of this episode within this season\n\n\ntitle\nThe title of the episode\n\n\noriginal_release\nThe date on which the episode was originally available on YouTube\n\n\nguest\nThe name of the guest\n\n\nguest_appearance_number\nThe number of appearances by this guest so far as of this date\n\n\nfinished\nWhether the guest finished trying all of the sauces\n\n\n\nThe second data set contains the data related to the sauces\n\nMainly it gives the description about the seasons in which the sauces were used and the Scoville scale reading (https://en.wikipedia.org/wiki/Scoville_scale)\nIt contains 210 observations\nThe variables used and the interpretation of the data table is as follows\n\n\nsauces.csv\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nseason\nThe season number\n\n\nsauce_number\nThe number of this sauce, from 1 (least hot) to 10 (hottest)\n\n\nsauce_name\nThe name of the sauce\n\n\nscoville\nThe rating of the sauce in Scoville heat units.\n\n\n\nThe Third data set contains the data related to seasons\n\nIt mainly shows the episodes per season, release date and the end date of the season. The data set contains record of 21 observations.\nThe variables used and their descriptions are as follows\n\n\nseasons.csv\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nseason\nThe season number\n\n\nepisodes\nThe count of episodes in this season\n\n\nnote\nNotes about this season\n\n\noriginal_release\nThe date of the first episode in this season\n\n\nlast_release\nThe date of the last episode of this season (if that episode has aired at the time of scraping)\n\n\n\n\n\n\nReason to choose the Dataset\nThe dataset represents an intriguing and distinctive topic. It is neither too small for meaningful analysis nor excessively large to hinder us from drawing conclusions. It pertains to a subject that not only our team members are familiar with but is also widely recognized. Having watched the episodes and gaining insights into the data collection process, we found it easier to connect with the dataset and analyze it more effectively."
   },
   {
     "objectID": "proposal.html#questions",
     "href": "proposal.html#questions",
     "title": "Hot Ones Episodes",
     "section": "Questions",
-    "text": "Questions\nQ1 ) Is there any correlation between the scoville score of the sauce and the number of guests who did not finish trying all the sauces?\n1.1) Find the season which has the most unfinished contestants\n1.2) Compare that with the sauce score.\n1.3) Is there any correlation between the average scoville score and the number of episodes for a season.\nQ2 ) Are there any sauces that are used in more than one season? visualize which sauces and in which seasons?"
+    "text": "Questions\nQ1 ) How does the average scoville score of the season affect the number of guests who did not finish trying all the sauces?\nQ2 ) Are there any sauces that are used in more than one season? Visualize which sauces and in which seasons?"
   },
   {
     "objectID": "proposal.html#analysis-plan",
     "href": "proposal.html#analysis-plan",
     "title": "Hot Ones Episodes",
     "section": "Analysis plan",
-    "text": "Analysis plan\n\nFor the first question, we plan on creating the variable “unfinished_count” which represents the number of guests that failed to try all the sauces for each season. Then we create another variable “average_scoville” which is the average of the variable “scoville” for each season. Then we can make a scatter plot in the first layer with “average_scovile” on the x-axis and “unfished_count” on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the “unfinished_count” variable from “episodes.csv” and the “average_scovile” variable from “sauces.csv”.\nFor the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a sunburst chart to visualize which season have more number of repetitive sauces."
+    "text": "Analysis plan\n\nFor the first question, we plan on creating the variable “unfinished_count” which represents the number of guests that failed to try all the sauces for each season. Then we create another variable “average_scoville” which is the average of the variable “scoville” for each season. Then we can make a scatter plot in the first layer with “average_scoville” on the x-axis and “unfinished_count” on the y-axis. We will also add a geom_smooth in the second layer to analyse the trend. Here we calculate the “unfinished_count” variable from “episodes.csv” and the “average_scoville” variable from “sauces.csv”. We are planning to find out the season which has the most unfinished contestants and analyse the sauce score for that. This way, we will be able to tell if the average scoville score have any impact on the number of contestants that failed to try all the sauces.\nFor the second question, we plan on extracting the data of the sauces that appeared more than once in the series and plot a line chart to visualize which season has more number of repetitive sauces. In other words, this will show the sauces that were used multiple times throughout the seasons. We want to do this because every season they change most of the lineup of hot sauces used and we would like to see which hot sauces remained in use in multiple seasons. By doing this, we can see if the scoville of the hot sauces reused was higher or lower than the average scoville of the season."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "From Mild to Wild",
+    "section": "",
+    "text": "Our comprehensive analysis of the popular YouTube series “Hot Ones” delved into two primary areas of interest.\n1. Relationship between Scoville Scores and Failure Rates:\nObjective: We aimed to discern the correlation between the spiciness of sauces, as measured by their Scoville scores, and the rate at which contestants failed to try all the sauces in each season.\nMethodology: Utilizing datasets “episodes.csv” and “sauces.csv,” we plotted the average Scoville score of each season against the number of contestants who opted out of trying all the sauces. The visualization combined a histogram representing failure counts with a smoothed plot for average Scoville scores.\nFindings: Preliminary observations suggest a potential relationship between higher Scoville scores and increased failure rates, indicating that spicier sauces might deter contestants from completing the challenge.\n2. Usage Trends of Hot Sauces Across Seasons:\nObjective: Our goal was to identify and visualize sauces that have been used in multiple seasons, shedding light on the show’s sauce selection trends and the enduring popularity of certain sauces.\nMethodology: Using the “sauces” dataset, we created a line graph to depict the trend of repeated sauces over time. A color gradient scale was incorporated to represent the spiciness level, and text annotations provided exact repetition counts for each sauce.\nFindings: “Da’ Bomb – Beyond Insanity” emerged as the most recurrent sauce, appearing 20 times since its introduction in season 2. Interestingly, while many repeated sauces had low to moderate Scoville scores, only a few with very high scores were reused, suggesting a preference for introducing new spicy sauces in subsequent seasons.\nIn conclusion, our analysis offers a detailed insight into the dynamics of sauce selection in “Hot Ones,” emphasizing the balance the show maintains between challenging contestants with spicy sauces and retaining viewer-favorite flavors."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "From Mild to Wild",
+    "section": "",
+    "text": "Our comprehensive analysis of the popular YouTube series “Hot Ones” delved into two primary areas of interest.\n1. Relationship between Scoville Scores and Failure Rates:\nObjective: We aimed to discern the correlation between the spiciness of sauces, as measured by their Scoville scores, and the rate at which contestants failed to try all the sauces in each season.\nMethodology: Utilizing datasets “episodes.csv” and “sauces.csv,” we plotted the average Scoville score of each season against the number of contestants who opted out of trying all the sauces. The visualization combined a histogram representing failure counts with a smoothed plot for average Scoville scores.\nFindings: Preliminary observations suggest a potential relationship between higher Scoville scores and increased failure rates, indicating that spicier sauces might deter contestants from completing the challenge.\n2. Usage Trends of Hot Sauces Across Seasons:\nObjective: Our goal was to identify and visualize sauces that have been used in multiple seasons, shedding light on the show’s sauce selection trends and the enduring popularity of certain sauces.\nMethodology: Using the “sauces” dataset, we created a line graph to depict the trend of repeated sauces over time. A color gradient scale was incorporated to represent the spiciness level, and text annotations provided exact repetition counts for each sauce.\nFindings: “Da’ Bomb – Beyond Insanity” emerged as the most recurrent sauce, appearing 20 times since its introduction in season 2. Interestingly, while many repeated sauces had low to moderate Scoville scores, only a few with very high scores were reused, suggesting a preference for introducing new spicy sauces in subsequent seasons.\nIn conclusion, our analysis offers a detailed insight into the dynamics of sauce selection in “Hot Ones,” emphasizing the balance the show maintains between challenging contestants with spicy sauces and retaining viewer-favorite flavors."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "From Mild to Wild",
+    "section": "Introduction:",
+    "text": "Introduction:\nLooking at the data set, the first thing that we were interested in finding out was the relation between scoville scores and the failure rate. Different sauces are used for different season so there will be a change in the scoville scores too. Since the scoville score represents the measure of the spiciness of the sauce, it is expected to have an effect on the failure rate because it is natural for more people to give up early if the scoville score of the is too high. In order to validate this, we are planning to plot the average scoville score of each season along with the number of contestants that failed to try all the sauces for each season. We have used the “episodes.csv” and the “sauces.csv” to do the same. We plan on making a histogram for the failure count and a geom_smooth plot for the average scoville score. Both will be plotted in a single plot so that it would be easier to compare the trends between both failure count and average scoville score."
+  },
+  {
+    "objectID": "index.html#approach",
+    "href": "index.html#approach",
+    "title": "From Mild to Wild",
+    "section": "Approach",
+    "text": "Approach\nHistogram:\nPurpose: Visualizing the distribution and trend followed by the number of contestants that failed to try all the sauces over the seasons.\nGeom_smooth:\nPurpose: Visualizing the trend followed by the average scoville score across the seasons.\nFirst, we created a data frame called scoville_scores from sauces.csv which contains the average scoville values(avg_scoville) of each season. Then, we created another data frame called unfinished_df which only contains the rows of episodes.csv in which the participants failed. This is used for plotting the histogram. Since we plan on combining both plots, we create the histogram and store it as a variable plt1. Then we combine it with geom_smooth plot using the + operator.\nSince the the failed count and the average scoville scores are in different scales, we have to scale the data to fit both of them in a single plot. So we wrote a function map_y2 to scale average scoville scores in the range of failed count. Since the average scoville scores are 6 digit numbers, we had to clean up the y-axis labels using the number_format function. Along with the geom_smooth plot, we have also added a scatter plot for the average scoville score, so that we can also visualize the actual points instead of just an approximate smoothed function. We have given different colors to the left and right y-axis which corresponds to the color of the plot it represents. This makes it easier to tell which axis belong to which plot."
+  },
+  {
+    "objectID": "index.html#analysis",
+    "href": "index.html#analysis",
+    "title": "From Mild to Wild",
+    "section": "Analysis",
+    "text": "Analysis\n\n# Importing the required libraries\nlibrary(readr)\nlibrary(dplyr)\nlibrary(scales)\nlibrary(ggplot2)\n\n# Loading Data\nepisodes &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')\nsauces &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')\nseasons &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')\n\n\n#Creating the data frame with mean scoville score of each season\nscoville_scores &lt;- sauces %&gt;%\n  group_by(season) %&gt;%\n  summarize(avg_scoville = mean(scoville, na.rm = TRUE))\n\n# Filtering the columns with unfinished contestants\nunfinished_df &lt;- episodes[episodes$finished == FALSE, ]\n\nmax_avg_scoville &lt;- max(scoville_scores$avg_scoville)\nscale_factor &lt;- 3 / max_avg_scoville\n\n# Function to \nmap_y2 &lt;- function(y) y * scale_factor\n\n# Pre-format the labels for the right y-axis using scales::number_format\nformatted_labels &lt;- number_format(scale = 0.001, accuracy = 1, suffix = \"K\")(c(0.00, 0.75, 1.50, 2.25, 3.00) / scale_factor)\n\nplt &lt;- ggplot() +\n  geom_histogram(data = unfinished_df, aes(x = season), fill = \"orange\", binwidth = 1) +\n  theme_minimal() +\n  theme(axis.text.y = element_text(color = \"orange\"), \n        axis.title.y = element_text(color = \"orange\"))\n\n# Modify the scale_y_continuous function to set the limits for both axes\nplt + geom_point(data = scoville_scores, aes(season, map_y2(avg_scoville))) +\n  geom_smooth(data = scoville_scores, aes(season, map_y2(avg_scoville)), se = FALSE, color = \"red\") +\n  labs(x = \"Season\",\n       y = \"Number of Unfinished contestants\",\n       title = \"Average Scoville Score vs Number of Unfinished Contestants\",\n       subtitle = \"by Season\",\n       caption = \"Source: Tidytuesday\") +\n  theme(axis.text.y.right = element_text(color = \"red\"), axis.title.y.right = element_text(color = \"red\")) +\n  scale_y_continuous(\n    limits = c(0, 3),  # Set limits for the left y-axis\n    sec.axis = sec_axis(\n      trans = ~ . / scale_factor,\n      name = \"Average Scoville Score\",\n      breaks = seq(0, max_avg_scoville, by = max_avg_scoville / 4),\n      labels = formatted_labels\n    ) # Set breaks and labels for the right y-axis\n  )"
+  },
+  {
+    "objectID": "index.html#discussion",
+    "href": "index.html#discussion",
+    "title": "From Mild to Wild",
+    "section": "Discussion",
+    "text": "Discussion\nAs discussed before, we naturally expect the number of unfinished contestant to increase as the average spiciness(scoville score) of the sauces increases. Interestingly, the result that we got from the plot is contradicting that assumption. We can see from the plot that the average scoville score has been increasing through out the seasons as the line goes up, while the number of contestents who failed to try all the sauces kept decreasing. One of the possible explanations for this trend is the fact that people were more worried about not having their name in the hall of shame when compared to tolerating the spiciness of the sauces. And as the popularity of the show kept increasing as newer seasons came out, the contestants pride outweighed the spiciness of the sauces. Moreover, the contestants were rewarded with a 30-second promotion for their next project if they win. So all these factors motivated them to eat all of the ten wings in the later seasons."
+  },
+  {
+    "objectID": "index.html#introduction-1",
+    "href": "index.html#introduction-1",
+    "title": "From Mild to Wild",
+    "section": "Introduction:",
+    "text": "Introduction:\nIn this analysis, we aim to explore the usage of hot sauces in the popular YouTube series “Hot Ones.” Specifically, we want to identify sauces that are used in more than one season and visualize their introduction and repetition across seasons. To answer this question, we will leverage the “sauces” dataset, which provides information on the season, sauce name, and Scoville score. This question piques our interest due to its potential to reveal trends in the show’s sauce selection and offer insights into the popularity and longevity of specific sauces over multiple seasons."
+  },
+  {
+    "objectID": "index.html#approach-1",
+    "href": "index.html#approach-1",
+    "title": "From Mild to Wild",
+    "section": "Approach:",
+    "text": "Approach:\nTo address the question, we used several layers. Each serves a specific purpose, and the choice of plot type is based on the type of data and the information we want to convey.\nLine graph:\nPurpose: Visualizing the trend of repeated sauces over time (seasons).\nA line plot is well-suited for showing how the frequency of repeated sauces changes over the seasons. Each sauce can be represented by a line, and the x-axis represents the seasons, making it easy to observe in which season the sauces were repeated.\nColor Gradient Scale:\nPurpose: Encoding additional information (e.g., spiciness level) using color.\nTo incorporate information about the spiciness of sauces, a color gradient scale is added to the line plot. This allows viewers to see how the Scoville score correlates with the repetition of sauces over time, as the color intensity can represent spiciness.\nText Annotation:\nPurpose: Displaying the frequency of each sauce’s repetition.\nText annotations can be added to the plot to show the exact count of repetitions for each sauce. This allows for a precise understanding of how often each sauce appears in the dataset."
+  },
+  {
+    "objectID": "index.html#analysis-1",
+    "href": "index.html#analysis-1",
+    "title": "From Mild to Wild",
+    "section": "Analysis:",
+    "text": "Analysis:\n\nCode\n\n#data cleaning\nsauces$sauce_name&lt;-ifelse(sauces$sauce_name==\"Da' Bomb Beyond Insanity\",\"Da' Bomb – Beyond Insanity\",sauces$sauce_name)\nrep_sauces&lt;-sauces|&gt;\n  group_by(sauce_name)|&gt;\n  mutate(count=n(), firstapp=min(season))|&gt;\n  filter(count&gt;1)\n#getting the frequency of repetitions of sauces\nuniq&lt;-sauces|&gt;\n  group_by(sauce_name)|&gt;\n  summarize(c=n(), firstapp=min(season))|&gt;\n  filter(c&gt;1)|&gt;\n  arrange(firstapp)\n\nrep_sauces|&gt;\nggplot(aes(x=season, y=reorder(sauce_name,firstapp),color=scoville))+\n  geom_line(linewidth=2)+\n  #added the color scale\n  scale_color_gradient(low=\"orange\",high=\"red\")+\n  scale_x_continuous(breaks=c(1:21))+\n  #adding the frequency of each sauce\n  annotate(\"text\",x=22,y=1:15,label=uniq$c)+\n  #text labeling\n  annotate(\"text\",x=24,y=8,label=\"Repetition Rate of Sauces\",angle=\"270\")+\n  theme_minimal()+\n  labs(x=\"Season\",\n       y=\"Sauce Name\",\n       title=\"Occurrences of Repeated Sauces\",\n       caption=\"Source: TidyTuesday\")+\n  #removing grids and adjusting the sauce name's size on x-axis\n  theme(\n    axis.text.y=element_text(size=10),\n    panel.grid.major.y = element_blank(),\n    panel.grid.minor.x=element_blank()\n  )"
+  },
+  {
+    "objectID": "index.html#discussions",
+    "href": "index.html#discussions",
+    "title": "From Mild to Wild",
+    "section": "Discussions:",
+    "text": "Discussions:\n\nThe “Da’ Bomb – Beyond” Insanity sauce which is introduced in season 2 repeated 20 times throughout the show making it the most popular sauce of the show followed by “Hot Ones – The Last Dab: Apollo” which is repeated 9 times and “Hot Ones – The Classic” which is repeated 8 times.\nMost of the sauces that were repeated have low to moderate scoville score, only 3 sauces out of 15 having a very high scoville score are repeated. From this we can interpret that in every season new sauces with high scoville scores were introduced and the old sauces with low scoville scores are repeated.\nSeason 2 has the most number of repeated sauces i.e. 6 repeated sauces out of 10. The sauces are arranged in the ordered in which they appeared in the show making the data more organized."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by ScatterPlot Sorcerers. For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: Akrant Varshney, is a 1st year graduate student in the Data Science program with the School of Infoormation.\nTeam member 2: Hariharan Ramesh, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 3: Thanoosha Naidu Karri, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 4: Antonio Escalante Jr., is a 1st year graduate student in the Data Science program with the School of Information."
+  },
+  {
+    "objectID": "presentation.html#so-what-is-the-hot-ones",
+    "href": "presentation.html#so-what-is-the-hot-ones",
+    "title": "From Mild to Wild",
+    "section": "So what is The Hot Ones ?",
+    "text": "So what is The Hot Ones ?\n\nEat to feel the Heat"
+  },
+  {
+    "objectID": "presentation.html#so-what-is-the-hot-ones-1",
+    "href": "presentation.html#so-what-is-the-hot-ones-1",
+    "title": "From Mild to Wild",
+    "section": "So what is The Hot Ones ?",
+    "text": "So what is The Hot Ones ?\n\nThe Transition of the Guest"
+  },
+  {
+    "objectID": "presentation.html#scoville-scale",
+    "href": "presentation.html#scoville-scale",
+    "title": "From Mild to Wild",
+    "section": "Scoville Scale",
+    "text": "Scoville Scale\n\n\nWell we all know guns right ?"
+  },
+  {
+    "objectID": "presentation.html#what-this-data-set-is-about",
+    "href": "presentation.html#what-this-data-set-is-about",
+    "title": "From Mild to Wild",
+    "section": "What this Data set is ABOUT?",
+    "text": "What this Data set is ABOUT?\n\n\n\n“Hot Ones” YouTube series overview\nMore than just a hot wing challenge\n\n\nPopularity Factors\n\n\n\nConcept of “schadenfreude”\nCandid celebrity conversations\nUnexpected reactions\n\n\n\n\n\n\nBillie Eilish, Shaq, and Tom Holland burning up and bugged-eyed on Hot Ones. Credit: First We Feast\n\n\n\n\n\nMelissa McCarthy uses a spray bottle full of milk. Credit: First We Feast"
+  },
+  {
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
+    "title": "From Mild to Wild",
+    "section": "Question-1",
+    "text": "Question-1\nDoes the scoville score have any effect on the number of people that fail to try all the sauces?"
+  },
+  {
+    "objectID": "presentation.html#question-1-1",
+    "href": "presentation.html#question-1-1",
+    "title": "From Mild to Wild",
+    "section": "Question-1",
+    "text": "Question-1\nThe Plot"
+  },
+  {
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
+    "title": "From Mild to Wild",
+    "section": "Question-2",
+    "text": "Question-2\nAre there any sauces that are used in more than one season? Visualize which sauces and in which seasons?"
+  },
+  {
+    "objectID": "presentation.html#question-2-1",
+    "href": "presentation.html#question-2-1",
+    "title": "From Mild to Wild",
+    "section": "Question-2",
+    "text": "Question-2\nThe Plot"
+  },
+  {
+    "objectID": "presentation.html#thank-you",
+    "href": "presentation.html#thank-you",
+    "title": "From Mild to Wild",
+    "section": "Thank You",
+    "text": "Thank You"
   }
 ]
