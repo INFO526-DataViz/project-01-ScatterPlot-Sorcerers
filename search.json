@@ -98,13 +98,6 @@
     "text": "Discussions:\n\nThe “Da’ Bomb – Beyond” Insanity sauce which is introduced in season 2 repeated 20 times throughout the show making it the most popular sauce of the show followed by “Hot Ones – The Last Dab: Apollo” which is repeated 9 times and “Hot Ones – The Classic” which is repeated 8 times.\nMost of the sauces that were repeated have low to moderate scoville score, only 3 sauces out of 15 having a very high scoville score are repeated. From this we can interpret that in every season new sauces with high scoville scores were introduced and the old sauces with low scoville scores are repeated.\nSeason 2 has the most number of repeated sauces i.e. 6 repeated sauces out of 10. The sauces are arranged in the ordered in which they appeared in the show making the data more organized."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by ScatterPlot Sorcerers. For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: Akrant Varshney, is a 1st year graduate student in the Data Science program with the School of Infoormation.\nTeam member 2: Hariharan Ramesh, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 3: Thanoosha Naidu Karri, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 4: Antonio Escalante Jr., is a 1st year graduate student in the Data Science program with the School of Information."
-  },
-  {
     "objectID": "presentation.html#so-what-is-the-hot-ones",
     "href": "presentation.html#so-what-is-the-hot-ones",
     "title": "From Mild to Wild",
@@ -166,5 +159,12 @@
     "title": "From Mild to Wild",
     "section": "Thank You",
     "text": "Thank You"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by ScatterPlot Sorcerers. For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: Akrant Varshney, is a 1st year graduate student in the Data Science program with the School of Infoormation.\nTeam member 2: Hariharan Ramesh, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 3: Thanoosha Naidu Karri, is a 1st year graduate student in the Data Science program with the School of Information.\nTeam member 4: Antonio Escalante Jr., is a 1st year graduate student in the Data Science program with the School of Information."
   }
 ]
